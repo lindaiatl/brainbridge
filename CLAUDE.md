@@ -21,6 +21,7 @@ BrainBridge 帮助人们通过可信的科学、有温度的写作和富有同�
 - index.html —— 首页(Hero 大图、三种帮助方式、关于 BrainBridge、精选文章、
   newsletter + 联系方式、页脚)
 - article.html —— 文章详情页示例
+- resources.html —— 资源列表页(按话题筛选的文章卡片列表)
 
 ## 视觉规范
 配色 hex、字体规范、间距等所有 visual specs 一律参考 design-system.md,
