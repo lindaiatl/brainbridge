@@ -168,10 +168,12 @@
         <h3>Get in touch</h3>
         <p>A question, a story to share, or a topic you'd like us to write about? We'd love to hear from you.</p>
         <a class="contact-email" href="mailto:lindai.atl@gmail.com">lindai.atl@gmail.com</a>
-        <input class="input-plain" type="text" placeholder="Your name">
-        <input class="input-plain" type="email" placeholder="Your email">
-        <textarea class="input-plain" placeholder="Your message" rows="3"></textarea>
-        <button type="button" class="btn btn-outline">Send message</button>
+        <form action="https://formspree.io/f/xojggagy" method="POST">
+          <input class="input-plain" type="text" name="name" placeholder="Your name">
+          <input class="input-plain" type="email" name="email" placeholder="Your email" required>
+          <textarea class="input-plain" name="message" placeholder="Your message" rows="3" required></textarea>
+          <button type="submit" class="btn btn-outline">Send message</button>
+        </form>
       </div>
     </div>
   </div>
