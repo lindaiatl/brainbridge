@@ -332,6 +332,14 @@ button, input, textarea { font-family: inherit; }
   gap: 60px;
   align-items: center;
 }
+.about-image-img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: var(--shadow-card);
+}
 .about-copy { display: flex; flex-direction: column; gap: 22px; }
 .about-copy h2 {
   margin: 0;
