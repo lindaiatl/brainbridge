@@ -340,6 +340,13 @@ button, input, textarea { font-family: inherit; }
   border-radius: 18px;
   box-shadow: var(--shadow-card);
 }
+.article-image-img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 14px;
+}
 .about-copy { display: flex; flex-direction: column; gap: 22px; }
 .about-copy h2 {
   margin: 0;
