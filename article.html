@@ -303,7 +303,7 @@
       var utterance = new SpeechSynthesisUtterance(sentences[index]);
       utterance.rate = 0.95;
       utterance.lang = 'en-US';
-      utterance.volume = 0.65;
+      utterance.volume = 0.45;
       utterance.onend = function () {
         speakSentences(sentences, index + 1);
       };
