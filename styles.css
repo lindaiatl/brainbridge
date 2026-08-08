@@ -271,6 +271,11 @@ button, input, textarea { font-family: inherit; }
   font: var(--fw-medium) 13px/1.4 var(--font-body);
 }
 .slot-16x9 { aspect-ratio: 16 / 9; border-radius: var(--radius-image); }
+.article-hero-img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
 .slot-1x1 { aspect-ratio: 1 / 1; border-radius: var(--radius-image); }
 .slot-16x10-lg { aspect-ratio: 16 / 10; border-radius: 14px; }
 .slot-16x10-sm { aspect-ratio: 16 / 10; border-radius: 12px; }
@@ -772,4 +777,24 @@ textarea.input-plain {
   .btn-cta { padding: 16px 28px; font-size: 17px; }
   .nav { gap: 16px; }
   .resource-card { grid-template-columns: 1fr; }
+}
+
+/* ---- Floating music toggle ---- */
+.music-toggle {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 100;
+  padding: 12px 20px;
+  border: none;
+  border-radius: var(--radius-pill, 999px);
+  background: #1C3D5A;
+  color: #fff;
+  font: var(--fw-medium) 14px/1 var(--font-body);
+  cursor: pointer;
+  box-shadow: var(--shadow-card);
+  transition: background 0.2s ease;
+}
+.music-toggle.is-playing {
+  background: #5E8B7E;
 }

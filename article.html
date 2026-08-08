@@ -43,7 +43,7 @@
     </div>
 
     <div class="article-hero-wrap">
-      <div class="image-slot slot-16x9" role="img" aria-label="Hero photo placeholder">Hero photo</div>
+      <img class="article-hero-img slot-16x9" src="alz.png" alt="An older adult and a caregiver sitting together, hands clasped, sharing a quiet, supportive moment">
     </div>
 
     <div class="article-body">
@@ -93,6 +93,51 @@
   </footer>
 
 </section>
+
+<audio id="bg-music" src="alz.mp3" loop preload="auto"></audio>
+<button id="music-toggle" class="music-toggle" type="button" aria-pressed="false">♪ Play calming music</button>
+<script>
+  (function () {
+    var audio = document.getElementById('bg-music');
+    var button = document.getElementById('music-toggle');
+    var targetVolume = 0.35;
+    var fadeTimer = null;
+
+    function fade(to, onDone) {
+      if (fadeTimer) clearInterval(fadeTimer);
+      var step = (to - audio.volume) / 20;
+      fadeTimer = setInterval(function () {
+        var next = audio.volume + step;
+        if ((step > 0 && next >= to) || (step < 0 && next <= to)) {
+          audio.volume = to;
+          clearInterval(fadeTimer);
+          fadeTimer = null;
+          if (onDone) onDone();
+        } else {
+          audio.volume = next;
+        }
+      }, 25);
+    }
+
+    button.addEventListener('click', function () {
+      if (audio.paused) {
+        audio.volume = 0;
+        audio.play();
+        fade(targetVolume);
+        button.textContent = '❚❚ Pause music';
+        button.classList.add('is-playing');
+        button.setAttribute('aria-pressed', 'true');
+      } else {
+        fade(0, function () {
+          audio.pause();
+        });
+        button.textContent = '♪ Play calming music';
+        button.classList.remove('is-playing');
+        button.setAttribute('aria-pressed', 'false');
+      }
+    });
+  })();
+</script>
 
 </body>
 </html>
