@@ -198,7 +198,75 @@
     <span class="footer-copyright">© 2026 BrainBridge · Understanding, together.</span>
   </footer>
 
+  <audio id="bg-music" src="music.mp3" loop preload="auto"></audio>
+  <button id="music-toggle" type="button" aria-pressed="false">♪ Play calming music</button>
+
 </section>
+
+<style>
+  #music-toggle {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 1000;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 999px;
+    background: #1C3D5A;
+    color: #fff;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+  }
+  #music-toggle.is-playing {
+    background: #5E8B7E;
+  }
+</style>
+
+<script>
+  (function () {
+    var audio = document.getElementById('bg-music');
+    var button = document.getElementById('music-toggle');
+    var targetVolume = 0.35;
+    var fadeInterval = null;
+
+    function fadeTo(target, onDone) {
+      clearInterval(fadeInterval);
+      var step = 0.05;
+      fadeInterval = setInterval(function () {
+        var next = audio.volume + (target > audio.volume ? step : -step);
+        if ((target > audio.volume && next >= target) || (target < audio.volume && next <= target)) {
+          audio.volume = target;
+          clearInterval(fadeInterval);
+          if (onDone) onDone();
+        } else {
+          audio.volume = next;
+        }
+      }, 40);
+    }
+
+    button.addEventListener('click', function () {
+      if (audio.paused) {
+        audio.volume = 0;
+        audio.play();
+        fadeTo(targetVolume);
+        button.textContent = '❚❚ Pause music';
+        button.classList.add('is-playing');
+        button.setAttribute('aria-pressed', 'true');
+      } else {
+        fadeTo(0, function () {
+          audio.pause();
+        });
+        button.textContent = '♪ Play calming music';
+        button.classList.remove('is-playing');
+        button.setAttribute('aria-pressed', 'false');
+      }
+    });
+  })();
+</script>
 
 <script>
   var form = document.getElementById('newsletter-form');
