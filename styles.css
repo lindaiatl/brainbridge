@@ -627,6 +627,62 @@ textarea.input-plain {
   font: italic var(--fw-regular) 23px/1.55 var(--font-display);
   color: var(--color-primary);
 }
+.article-body h3 {
+  margin: 4px 0 0;
+  font: var(--fw-semibold) 22px/1.35 var(--font-display);
+  color: var(--ink-900);
+}
+.article-body ul {
+  margin: 0;
+  padding-left: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.article-body ul li {
+  font: var(--fw-regular) 19px/1.6 var(--font-display);
+  color: #2b3a47;
+}
+.article-body sup {
+  font-size: 0.6em;
+  font-weight: var(--fw-semibold);
+  margin-left: 1px;
+}
+.article-body sup a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+.article-body sup a:hover { text-decoration: underline; }
+.references-block {
+  margin: 8px 0 0;
+  padding: 30px 32px;
+  background: var(--blue-050);
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.references-block h2 { margin: 0; }
+.references-list {
+  margin: 0;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font: var(--fw-regular) 14px/1.6 var(--font-body);
+  color: var(--ink-500);
+}
+.references-list a { color: var(--color-primary); word-break: break-word; }
+.medical-note {
+  margin: 8px 0 0;
+  padding: 22px 26px;
+  border: 1px solid var(--line-cool);
+  border-radius: 12px;
+  background: var(--surface-alt);
+  font: var(--fw-medium) 14px/1.6 var(--font-body);
+  color: var(--ink-600);
+}
+.medical-note strong { color: var(--ink-900); }
 .related-section {
   background: var(--blue-050);
   padding: 64px var(--space-6);
