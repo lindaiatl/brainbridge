@@ -40,13 +40,14 @@
           <span class="byline-sub">15 min read · Reviewed by a neuroscientist</span>
         </div>
       </div>
+      <button id="listen-toggle" class="listen-toggle" type="button" aria-pressed="false">🔊 Listen to this article</button>
     </div>
 
     <div class="article-hero-wrap">
       <img class="article-hero-img slot-16x9" src="alz.png" alt="An older adult and a caregiver sitting together, hands clasped, sharing a quiet, supportive moment">
     </div>
 
-    <div class="article-body">
+    <div class="article-body" id="article-body">
       <p>Alzheimer's disease is often described as memory loss. But memory is only the most visible beginning of a much larger story.</p>
       <p>Alzheimer's is a progressive biological disease that changes how brain cells communicate, function, and survive. These changes may begin many years before symptoms become noticeable.<sup><a href="#ref-1">1</a></sup><sup><a href="#ref-6">6</a></sup> Over time, the disease can affect not only memory but also language, judgment, orientation, mood, movement, and the ability to manage everyday life.</p>
       <p>Understanding these changes does not make the disease easy. But it can make confusing experiences less frightening, help families respond with greater compassion, and create more room for planning, treatment, connection, and hope.</p>
@@ -275,6 +276,56 @@
         button.classList.remove('is-playing');
         button.setAttribute('aria-pressed', 'false');
       }
+    });
+  })();
+</script>
+
+<script>
+  (function () {
+    var button = document.getElementById('listen-toggle');
+    var body = document.getElementById('article-body');
+    if (!button || !body || !('speechSynthesis' in window)) return;
+
+    var LABEL_IDLE = '🔊 Listen to this article';
+    var LABEL_SPEAKING = '⏹ Stop listening';
+
+    function setSpeaking(isSpeaking) {
+      button.textContent = isSpeaking ? LABEL_SPEAKING : LABEL_IDLE;
+      button.classList.toggle('is-speaking', isSpeaking);
+      button.setAttribute('aria-pressed', isSpeaking ? 'true' : 'false');
+    }
+
+    function speakSentences(sentences, index) {
+      if (index >= sentences.length) {
+        setSpeaking(false);
+        return;
+      }
+      var utterance = new SpeechSynthesisUtterance(sentences[index]);
+      utterance.rate = 0.95;
+      utterance.lang = 'en-US';
+      utterance.onend = function () {
+        speakSentences(sentences, index + 1);
+      };
+      utterance.onerror = function () {
+        setSpeaking(false);
+      };
+      window.speechSynthesis.speak(utterance);
+    }
+
+    button.addEventListener('click', function () {
+      if (window.speechSynthesis.speaking || window.speechSynthesis.pending) {
+        window.speechSynthesis.cancel();
+        setSpeaking(false);
+        return;
+      }
+      var sentences = body.innerText
+        .replace(/\s+/g, ' ')
+        .trim()
+        .match(/[^.!?]+[.!?]*/g) || [];
+      sentences = sentences.map(function (s) { return s.trim(); }).filter(Boolean);
+      if (!sentences.length) return;
+      setSpeaking(true);
+      speakSentences(sentences, 0);
     });
   })();
 </script>

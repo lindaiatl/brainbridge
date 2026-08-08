@@ -840,6 +840,24 @@ textarea.input-plain {
   .resource-card { grid-template-columns: 1fr; }
 }
 
+/* ---- Listen to article toggle ---- */
+.listen-toggle {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: 1.5px solid #1C3D5A;
+  border-radius: var(--radius-pill, 999px);
+  background: #fff;
+  color: #1C3D5A;
+  font: var(--fw-medium) 14px/1 var(--font-body);
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.listen-toggle.is-speaking {
+  background: #5E8B7E;
+  border-color: #5E8B7E;
+  color: #fff;
+}
+
 /* ---- Floating music toggle ---- */
 .music-toggle {
   position: fixed;
