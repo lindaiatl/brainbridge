@@ -261,6 +261,8 @@ button, input, textarea { font-family: inherit; }
   display: block;
   border-radius: 0;
   box-shadow: var(--shadow-card);
+  transform: scale(1.06);
+  transform-origin: center;
 }
 
 /* ---- Image slot placeholders ---- */
