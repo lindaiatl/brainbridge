@@ -250,16 +250,14 @@ button, input, textarea { font-family: inherit; }
 }
 .hero-image {
   width: 100%;
-  align-self: stretch;
   overflow: hidden;
   border-radius: var(--radius-image);
 }
 .hero-image-img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
   display: block;
-  border-radius: var(--radius-image);
+  border-radius: 0;
   box-shadow: var(--shadow-card);
 }
 
