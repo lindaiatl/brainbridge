@@ -21,7 +21,14 @@ BrainBridge 帮助人们通过可信的科学、有温度的写作和富有同�
 - index.html —— 首页(Hero 大图、三种帮助方式、关于 BrainBridge、精选文章、
   newsletter + 联系方式、页脚)
 - article.html —— 文章详情页示例
-- resources.html —— 资源列表页(按话题筛选的文章卡片列表)
+- resources.html —— 资源列表页(按话题筛选的文章卡片列表,含所有话题)
+- stories-of-hope.html —— "Stories of Hope" 专题目录页,列出该栏目下的所有
+  文章(目前两篇:hope.html「A Three-Minute Walk」、
+  mom-cold-warm.html「Mom, Are You Cold? Mom, Don't Be Afraid」)。首页
+  "Stories of Hope" 卡片指向这里,而不是直接指向某一篇文章。新增 Hope 分类
+  文章时,除了在 resources.html 加卡片外,也要在这里加一张。
+- hope.html / mom-cold-warm.html —— Stories of Hope 栏目下的单篇文章页,
+  彼此在 "Related resources" 里互相链接,返回链接指向 stories-of-hope.html。
 
 ## 视觉规范
 配色 hex、字体规范、间距等所有 visual specs 一律参考 design-system.md,
