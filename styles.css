@@ -751,6 +751,42 @@ textarea.input-plain {
   text-wrap: pretty;
 }
 
+/* ---- Compact text index (e.g. "Jump to a story") ---- */
+.story-toc {
+  margin-top: 4px;
+}
+.story-toc-label {
+  display: block;
+  font: var(--fw-semibold) var(--fs-eyebrow)/1 var(--font-body);
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 4px;
+}
+.story-toc-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-bottom: 1px solid var(--line);
+}
+.story-toc-list li {
+  border-top: 1px solid var(--line);
+}
+.story-toc-list a {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding: 14px 2px;
+  font: var(--fw-medium) 19px/1.3 var(--font-display);
+  color: var(--ink-900);
+}
+.story-toc-list a:hover { color: var(--color-primary); }
+.story-toc-number {
+  font: var(--fw-medium) 13px/1 var(--font-body);
+  color: var(--ink-300);
+  flex-shrink: 0;
+}
+
 .topic-filter {
   padding: 8px var(--space-6) 12px;
   display: flex;
