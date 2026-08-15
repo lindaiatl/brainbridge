@@ -15,6 +15,9 @@
   --green-100: #EBF3EE;
   --green-050: #EDF3EF;
 
+  /* Muted blue-green — quiet kicker labels on personal-story articles */
+  --teal-muted: #4F7A82;
+
   /* Neutrals — warm */
   --surface: #FBFAF6;
   --surface-plain: #FFFFFF;
@@ -569,6 +572,13 @@ textarea.input-plain {
   letter-spacing: 0.06em;
   color: var(--color-accent);
 }
+.story-kicker {
+  display: block;
+  font: var(--fw-medium) 11px/1.4 var(--font-body);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--teal-muted);
+}
 .article-title {
   margin: 0;
   font: var(--fw-medium) 46px/1.12 var(--font-display);
@@ -620,6 +630,17 @@ textarea.input-plain {
   margin: 0;
   font: var(--fw-regular) 19px/1.75 var(--font-display);
   color: #2b3a47;
+}
+.story-divider {
+  width: 64px;
+  height: 1px;
+  margin: 4px auto;
+  border: none;
+  background: var(--line-cool);
+}
+.article-body p.story-note {
+  font: italic var(--fw-regular) 15px/1.6 var(--font-body);
+  color: var(--ink-500);
 }
 .article-body h2 {
   margin: 8px 0 0;

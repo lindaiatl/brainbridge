@@ -20,6 +20,11 @@ Referenced by `CLAUDE.md` — keep this file in sync with `styles.css`.
 | `--green-100` | `#EBF3EE` | Section tint (Newsletter) |
 | `--green-050` | `#EDF3EF` | Reserved |
 
+### Muted blue-green (quiet kicker)
+| Token | Hex | Use |
+|---|---|---|
+| `--teal-muted` | `#4F7A82` | `.story-kicker` — small context line above a personal-story article title, kept subdued so it never competes with the headline |
+
 ### Neutrals — warm
 | Token | Hex | Use |
 |---|---|---|
@@ -114,7 +119,11 @@ quote 23px/1.55.
   inside `.hero`) automatically.
 - **Eyebrow** (`.eyebrow`) — uppercase label, sage green, 13px, letter-spacing
   0.16em. **Tag** (`.tag`) is the smaller 12px/0.1em variant used on article
-  cards.
+  cards. **Story kicker** (`.story-kicker`) — smaller still (11px), muted
+  blue-green (`--teal-muted`), letter-spacing 0.14em; sits above the `<h1>`
+  on personal-story articles as a quiet context line (e.g. "Alzheimer's · A
+  Daughter's Story · Love & Loss") without competing with the eyebrow or
+  title.
 - **Image slot** (`.image-slot` + `.slot-*` modifiers) — dashed placeholder
   for images not yet supplied. Real images (e.g. `hero.webp`) skip this and
   use `.hero-image-img` / plain `<img>` with `--radius-image` instead.
