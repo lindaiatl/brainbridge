@@ -143,6 +143,7 @@
 </section>
 
 <audio id="bg-music" src="MomDreamed.mp3" loop preload="auto"></audio>
+<audio id="narration-audio" src="MomDreamed-narration.m4a" preload="none"></audio>
 <button id="music-toggle" class="music-toggle" type="button" aria-pressed="false">♪ Play calming music</button>
 <script>
   (function () {
@@ -190,11 +191,31 @@
 <script>
   (function () {
     var button = document.getElementById('listen-toggle');
-    var body = document.getElementById('article-body');
-    if (!button || !body || !('speechSynthesis' in window)) return;
+    var narration = document.getElementById('narration-audio');
+    var music = document.getElementById('bg-music');
+    if (!button || !narration) return;
 
     var LABEL_IDLE = '🔊 Listen to this article';
-    var LABEL_SPEAKING = '⏹ Stop listening';
+    var LABEL_SPEAKING = '⏸ Pause listening';
+    var musicTargetVolume = 0.35;
+    var musicDuckVolume = 0.08;
+    var duckTimer = null;
+
+    function duckMusic(to) {
+      if (!music || music.paused) return;
+      if (duckTimer) clearInterval(duckTimer);
+      var step = (to - music.volume) / 20;
+      duckTimer = setInterval(function () {
+        var next = music.volume + step;
+        if ((step > 0 && next >= to) || (step < 0 && next <= to)) {
+          music.volume = to;
+          clearInterval(duckTimer);
+          duckTimer = null;
+        } else {
+          music.volume = next;
+        }
+      }, 25);
+    }
 
     function setSpeaking(isSpeaking) {
       button.textContent = isSpeaking ? LABEL_SPEAKING : LABEL_IDLE;
@@ -202,38 +223,21 @@
       button.setAttribute('aria-pressed', isSpeaking ? 'true' : 'false');
     }
 
-    function speakSentences(sentences, index) {
-      if (index >= sentences.length) {
-        setSpeaking(false);
-        return;
-      }
-      var utterance = new SpeechSynthesisUtterance(sentences[index]);
-      utterance.rate = 0.95;
-      utterance.lang = 'en-US';
-      utterance.volume = 0.45;
-      utterance.onend = function () {
-        speakSentences(sentences, index + 1);
-      };
-      utterance.onerror = function () {
-        setSpeaking(false);
-      };
-      window.speechSynthesis.speak(utterance);
-    }
-
     button.addEventListener('click', function () {
-      if (window.speechSynthesis.speaking || window.speechSynthesis.pending) {
-        window.speechSynthesis.cancel();
+      if (narration.paused) {
+        narration.play();
+        duckMusic(musicDuckVolume);
+        setSpeaking(true);
+      } else {
+        narration.pause();
+        duckMusic(musicTargetVolume);
         setSpeaking(false);
-        return;
       }
-      var sentences = body.innerText
-        .replace(/\s+/g, ' ')
-        .trim()
-        .match(/[^.!?]+[.!?]*/g) || [];
-      sentences = sentences.map(function (s) { return s.trim(); }).filter(Boolean);
-      if (!sentences.length) return;
-      setSpeaking(true);
-      speakSentences(sentences, 0);
+    });
+
+    narration.addEventListener('ended', function () {
+      duckMusic(musicTargetVolume);
+      setSpeaking(false);
     });
   })();
 </script>
