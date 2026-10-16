@@ -8,8 +8,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="alternate" hreflang="en" href="https://mindcadence.org/mom-dreamed.html">
-<link rel="alternate" hreflang="zh-Hans" href="https://mindcadence.org/zh/mom-dreamed.html">
+<link rel="alternate" hreflang="en" href="https://www.mindcadence.org/mom-dreamed.html">
+<link rel="alternate" hreflang="zh-Hans" href="https://www.mindcadence.org/zh/mom-dreamed.html">
 <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
@@ -141,6 +141,7 @@
 </section>
 
 <audio id="bg-music" src="../MomDreamed.mp3" loop preload="auto"></audio>
+<audio id="narration-audio" src="mom-dreamed-narration.mp3" preload="none"></audio>
 <button id="music-toggle" class="music-toggle" type="button" aria-pressed="false">♪ 播放舒缓音乐</button>
 <script>
   (function () {
@@ -188,12 +189,12 @@
 <script>
   (function () {
     var button = document.getElementById('listen-toggle');
-    var body = document.getElementById('article-body');
+    var narration = document.getElementById('narration-audio');
     var music = document.getElementById('bg-music');
-    if (!button || !body || !('speechSynthesis' in window)) { if (button) button.style.display = 'none'; return; }
+    if (!button || !narration) return;
 
     var LABEL_IDLE = '🔊 朗读这篇文章';
-    var LABEL_SPEAKING = '⏹ 停止朗读';
+    var LABEL_SPEAKING = '⏸ 暂停朗读';
     var musicTargetVolume = 0.35, musicDuckVolume = 0.08, duckTimer = null;
 
     function duckMusic(to) {
@@ -206,37 +207,17 @@
         else { music.volume = next; }
       }, 25);
     }
-    function pickVoice() {
-      var voices = window.speechSynthesis.getVoices() || [];
-      var zh = voices.filter(function (v) { return /^zh(-|_)?(CN|Hans)?/i.test(v.lang) && !/HK|TW/i.test(v.lang); });
-      var good = zh.filter(function (v) { return /Premium|Enhanced|Tingting|Ting-Ting|Lili|Xiaoxiao|Google/i.test(v.name); });
-      return good[0] || zh[0] || null;
-    }
     function setSpeaking(on) {
       button.textContent = on ? LABEL_SPEAKING : LABEL_IDLE;
       button.classList.toggle('is-speaking', on);
       button.setAttribute('aria-pressed', on ? 'true' : 'false');
       duckMusic(on ? musicDuckVolume : musicTargetVolume);
     }
-    function speak(parts, i) {
-      if (i >= parts.length) { setSpeaking(false); return; }
-      var u = new SpeechSynthesisUtterance(parts[i]);
-      u.lang = 'zh-CN'; u.rate = 0.9; u.volume = 0.6;
-      var v = pickVoice(); if (v) u.voice = v;
-      u.onend = function () { speak(parts, i + 1); };
-      u.onerror = function () { setSpeaking(false); };
-      window.speechSynthesis.speak(u);
-    }
     button.addEventListener('click', function () {
-      if (window.speechSynthesis.speaking || window.speechSynthesis.pending) {
-        window.speechSynthesis.cancel(); setSpeaking(false); return;
-      }
-      var text = Array.prototype.map.call(body.querySelectorAll('p:not(.story-note)'), function (p) { return p.innerText; }).join('\n');
-      var parts = (text.match(/[^。！？!?\n]+[。！？!?”」]*/g) || []).map(function (s) { return s.trim(); }).filter(Boolean);
-      if (!parts.length) return;
-      setSpeaking(true); speak(parts, 0);
+      if (narration.paused) { narration.play(); setSpeaking(true); }
+      else { narration.pause(); setSpeaking(false); }
     });
-    if (window.speechSynthesis.onvoiceschanged !== undefined) window.speechSynthesis.onvoiceschanged = function () {};
+    narration.addEventListener('ended', function () { setSpeaking(false); });
   })();
 </script>
 
