@@ -1,7 +1,12 @@
-# BrainBridge — Project Guide
+# MindCadence 脑韵 — Project Guide
+
+网站名:英文 MindCadence(连写),中文"脑韵"。主域名 mindcadence.org
+(另有 rhythmofmind.org / rhythmofmind.online / rhythmofbrain.com,均跳转到主域名)。
+中文页标志显示"脑韵 MindCadence";中文正文里单独提到品牌时只写"脑韵"。
+旧名 BrainBridge、旧网址 brainbridge-nine.vercel.app 已停用。
 
 ## 品牌定位
-BrainBridge 帮助人们通过可信的科学、有温度的写作和富有同理心的引导,
+MindCadence 帮助人们通过可信的科学、有温度的写作和富有同理心的引导,
 更好地理解大脑、疾病、照护与生活。让脑科学连接普通人的真实生活。
 
 ## 目标受众
@@ -18,7 +23,7 @@ BrainBridge 帮助人们通过可信的科学、有温度的写作和富有同�
 面向"你"说话;句子简短、令人安心;不用行话;不用 emoji。
 
 ## 页面列表
-- index.html —— 首页(Hero 大图、三种帮助方式、关于 BrainBridge、精选文章、
+- index.html —— 首页(Hero 大图、三种帮助方式、关于 MindCadence、精选文章、
   newsletter + 联系方式、页脚)
 - article.html —— 文章详情页示例
 - resources.html —— 资源列表页(按话题筛选的文章卡片列表,含所有话题)
@@ -41,6 +46,22 @@ BrainBridge 帮助人们通过可信的科学、有温度的写作和富有同�
   stories-of-hope.html。mom-flowers 到 mom-sea 这 7 篇没有专门录制的朗读
   音频,"Listen to this article" 用浏览器内置的 speechSynthesis 朗读正文
   (与 hope.html 相同的实现),背景音乐则各自使用 Mom 文件夹里对应的 mp3。
+
+## 双语(英文 / 中文)
+- 中文版放在 zh/ 目录:zh/index.html、zh/resources.html、zh/stories-of-hope.html,
+  与同名英文页一一对应,每页 <head> 里有 hreflang 互指。
+- 每个页面导航最后都有 "EN / 中文" 切换(.lang-switch)。英文文章页目前没有中文版,
+  它们的"中文"链接指向对应的中文目录页(Hope 故事 → zh/stories-of-hope.html,
+  其他文章 → zh/resources.html)。
+- "希望的故事"九篇文章已有中文版:zh/<同名>.html,正文来自作者的中文原稿(桌面"hope双语版文章"文件夹),
+  标题用作者原稿标题，中文页不显示作者署名。配图、背景音乐与英文版相同(引用 ../ 下同一文件)。
+  中文版"朗读这篇文章"用浏览器内置中文语音(speechSynthesis, zh-CN),朗读时背景音乐自动调低;
+  英文版的真人朗读音频是英文的，所以中文页不用。英文文章页的"中文"链接直接指向对应中文文章。
+- 其他栏目(认识疾病等)只翻译了网站框架(导航、首页、栏目页、卡片标题与简介);文章正文仍是英文,
+  中文页上的"阅读(英文)→"链接到 ../ 下的英文文章。
+- 改动英文首页/资源页/Hope 目录页的文字或新增卡片时,要同步修改 zh/ 下对应页面。
+- 以后翻译某篇文章时:新建 zh/<同名>.html,并把中文目录页里的链接改指向它,
+  英文文章页的"中文"链接也改指向它。
 
 ## 视觉规范
 配色 hex、字体规范、间距等所有 visual specs 一律参考 design-system.md,

@@ -1,6 +1,6 @@
 /* ==========================================================================
-   BrainBridge — shared stylesheet for index.html and article.html
-   Design tokens sourced from the BrainBridge Claude Design project.
+   MindCadence — shared stylesheet for index.html and article.html
+   Design tokens sourced from the MindCadence Claude Design project.
    ========================================================================== */
 
 :root {
@@ -942,3 +942,45 @@ textarea.input-plain {
 .music-toggle.is-playing {
   background: #5E8B7E;
 }
+
+/* ---- Language switch (EN / 中文) ---- */
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font: var(--fw-medium) 14px/1 var(--font-body);
+  color: var(--ink-500);
+}
+.lang-switch a {
+  color: var(--ink-500);
+  padding: 4px 2px;
+  border-bottom: 1px solid transparent;
+}
+.lang-switch a:hover { color: var(--color-primary); border-bottom-color: var(--color-primary); }
+.lang-switch .lang-current { color: var(--color-primary); font-weight: var(--fw-semibold); }
+.lang-switch .lang-sep { color: var(--line-cool); }
+
+/* Small note on Chinese listing pages: articles are still English */
+.lang-note,
+.resources-intro .lang-note {
+  margin-top: 10px;
+  font: var(--fw-regular) 14px/1.6 var(--font-body);
+  color: var(--ink-500);
+}
+
+/* ---- Chinese pages: CJK font fallbacks + looser rhythm ---- */
+html[lang^="zh"] {
+  --font-display: "Newsreader", "Songti SC", "Noto Serif SC", "Source Han Serif SC", "STSong", serif;
+  --font-body: "Work Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+}
+html[lang^="zh"] .hero-content h1,
+html[lang^="zh"] .article-title,
+html[lang^="zh"] h2 { line-height: 1.3; }
+html[lang^="zh"] p { line-height: 1.8; }
+html[lang^="zh"] .eyebrow,
+html[lang^="zh"] .tag,
+html[lang^="zh"] .story-toc-label,
+html[lang^="zh"] .story-kicker { letter-spacing: 0.08em; }
+
+/* Chinese logo: "脑韵" followed by the English wordmark */
+.logo-text-en { margin-left: 0.3em; }

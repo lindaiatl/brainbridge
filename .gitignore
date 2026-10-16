@@ -1,2 +1,5 @@
 *.docx
 .DS_Store
+_to_delete/
+_to_delete2/
+Claude outputs/

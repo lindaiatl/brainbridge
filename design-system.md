@@ -1,4 +1,4 @@
-# BrainBridge — Design System
+# MindCadence — Design System
 
 Source of truth for all visual specs (color, type, spacing, components).
 Referenced by `CLAUDE.md` — keep this file in sync with `styles.css`.
@@ -138,3 +138,21 @@ quote 23px/1.55.
   Featured articles, Newsletter + contact, Footer.
 - `article.html` — Article intro, hero image, body copy, Related resources,
   Footer.
+
+
+## Bilingual (EN / 中文)
+
+- Chinese pages live in `zh/` and mirror the English page of the same name
+  (`zh/index.html`, `zh/resources.html`, `zh/stories-of-hope.html`). They load
+  `../styles.css` and reference assets with `../`.
+- `.lang-switch` — "EN / 中文" control, last item in every page's `.nav`.
+  Current language: `--color-primary`, semibold. Other language: `--ink-500`
+  link, underline on hover. Separator: `--line-cool`.
+- `.lang-note` — one quiet line (14px, `--ink-500`) under the intro on Chinese
+  listing pages while articles are English-only.
+- `html[lang^="zh"]` overrides `--font-display` / `--font-body` with CJK
+  fallbacks (Songti SC / Noto Serif SC; PingFang SC / Noto Sans SC), loosens
+  heading line-height to 1.3 and body to 1.8, and tightens eyebrow/tag
+  letter-spacing to 0.08em.
+- Chinese pages show the logo as `脑韵` + `<span class="logo-text-en">MindCadence</span>`
+  (same `.logo-text` style, 0.3em gap). In Chinese body copy the brand is just "脑韵".
