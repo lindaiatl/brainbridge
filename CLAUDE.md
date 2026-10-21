@@ -75,6 +75,13 @@ MindCadence 帮助人们通过可信的科学、有温度的写作和富有同�
   首页"Neuroscience Made Simple / 轻松读懂神经科学"卡片指向它;两篇神经科学文章的返回链接也指向它。
 - 修正：九篇中文希望故事页的语言切换原来把 EN 标成当前页，已改为 EN 链接 + 中文为当前。
 
+## 2026-10-21 更新
+- 照护者栏目新增第二篇：give-my-time.html / zh/give-my-time.html(I Give You My Time / 我把时间献给你，Lindai 的随笔),
+  配图 give-my-time.jpg,背景音乐 give-my-time.mp3(原 velariomusic-relaxing-music),来源桌面 GiveMyTime 文件夹。
+  英文页署名 Lindai,中文页不署名(同希望的故事)。朗读用浏览器 speechSynthesis。副标题由 Claude 撰写。
+- 新建照护者目录页 caregivers-articles.html / zh/caregivers-articles.html,首页"A Guide for Caregivers / 照护者指南"卡片指向它;
+  caregivers.html 两个语言版本的返回链接也指向它。
+
 ## 视觉规范
 配色 hex、字体规范、间距等所有 visual specs 一律参考 design-system.md,
 不在本文件中重复。
