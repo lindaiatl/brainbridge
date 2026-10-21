@@ -63,6 +63,18 @@ MindCadence 帮助人们通过可信的科学、有温度的写作和富有同�
 - 以后翻译某篇文章时:新建 zh/<同名>.html,并把中文目录页里的链接改指向它,
   英文文章页的"中文"链接也改指向它。
 
+## 2026-10-20 更新
+- 五个栏目的首篇文章已有中文版:zh/article.html(认识阿尔茨海默病)、zh/caregivers.html、zh/brain-health.html、
+  zh/neuroscience.html、zh/healing.html。正文来自桌面"双语版文章"文件夹的中文稿，配图与背景音乐与英文版相同。
+  中文页署名"脑韵团队";"朗读这篇文章"暂用浏览器 speechSynthesis(zh-CN),还没有录制的朗读音频。
+  英文页"中文"链接已指向对应中文页;中文目录/首页/相关文章里的"阅读（英文）"都已改为中文页。
+- 神经科学栏目新增第二篇:beam-of-light.html / zh/beam-of-light.html
+  (A Beam of Light Into the Depths of Memory / 一束光，照进记忆深处，2026 诺贝尔奖光遗传学与阿尔茨海默病),
+  配图 beam-of-light.png,背景音乐 beam-of-light.mp3(原 leberch-inspirational-calm)。
+- 新建神经科学目录页 neuroscience-articles.html / zh/neuroscience-articles.html(照 Stories of Hope 模式),
+  首页"Neuroscience Made Simple / 轻松读懂神经科学"卡片指向它;两篇神经科学文章的返回链接也指向它。
+- 修正：九篇中文希望故事页的语言切换原来把 EN 标成当前页，已改为 EN 链接 + 中文为当前。
+
 ## 视觉规范
 配色 hex、字体规范、间距等所有 visual specs 一律参考 design-system.md,
 不在本文件中重复。
