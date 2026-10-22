@@ -1095,3 +1095,7 @@ html[lang^="zh"] .story-kicker { letter-spacing: 0.08em; }
 .issue-card .issue-pdf { margin-top: 4px; font: var(--fw-medium) 14px/1.4 var(--font-body); color: var(--color-primary); }
 .issue-inaugural { color: var(--color-primary); border: 1px solid var(--color-primary); border-radius: var(--radius-pill); padding: 3px 9px; }
 .nl-music-credit { margin: 2px 0 0; font: var(--fw-regular) 13px/1.5 var(--font-body); color: var(--ink-500); }
+/* contact form: fields fill the card */
+.contact-card form { display: flex; flex-direction: column; gap: 10px; width: 100%; }
+.contact-card form .input-plain { width: 100%; box-sizing: border-box; }
+.contact-card form .btn { align-self: flex-start; }

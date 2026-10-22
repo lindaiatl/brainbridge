@@ -109,3 +109,5 @@ MindCadence 帮助人们通过可信的科学、有温度的写作和富有同�
 - 2026-10-22 补充：每期同时出 PDF 小册页（5.5×8.5 英寸，两页，中英文各一份，可打印收藏），发布在 newsletter/pdf/mindcadence-newsletter-NN-en.pdf / -zh.pdf，
   期刊网页上有"下载本期（PDF）"链接。每期内容写在一个 content.json 里，用 "Claude outputs/newsletter/kit/" 里的 make_issue.py + render_pdf.js
   一次生成网页和 PDF（见 kit/README.md）。旧的 template-*.html 已移到 old-templates/，不再使用。Word 版仅在有需要时另做。
+- 2026-10-22：顶部导航去掉 "Come In / 进来看看" 按钮（与 Articles 重复）；首页大图里的 "Come In / 进来看看" 改为滚动到 #three（我们如何帮助），从头介绍网站。
+  联系表单的输入框改为占满卡片宽度。
