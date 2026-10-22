@@ -97,3 +97,15 @@ MindCadence 帮助人们通过可信的科学、有温度的写作和富有同�
   在 .issue-list 里按 HTML 注释中的模板加一张 .issue-card(最新的放最前),并删掉 .issue-empty。
 - 订阅表单(首页和简报页)现在真正提交到 Formspree(https://formspree.io/f/xojggagy,与联系表单同一个),
   主题为 "New newsletter subscriber" / "资讯简报订阅",订阅邮箱会发到网站邮箱。之前的订阅表单只显示"谢谢"、并没有保存邮箱。
+
+## 资讯简报（Newsletter）编辑方针 — 2026-10-22
+- 每月两期：1 日「研究与发现 Research & Discovery」（阿尔茨海默病机制、早期诊断、生物标志物、治疗、临床试验）；
+  15 日「心灵与人文 Mind & Humanity」（患者、家属、照护者的生活体验，结合脑科学、心理学、音乐、艺术、文学）。
+- 三分钟读完，三个栏目：① The Discovery｜科学新发现（英文 120–150 词，一项研究，回答发现了什么/为什么值得关注/对普通人意味着什么，附原始研究链接，标证据类型）
+  ② The Human Side｜人文视角（80–100 词） ③ Worth Exploring｜延伸阅读（40–60 词，推荐一篇网站文章或一项研究）。
+- 配图：优先根据内容自制插图（放 newsletter/img/），或免费的公版原作；外部图片必须免费可用。
+- 每期页面：newsletter/issue-NN.html、zh/newsletter/issue-NN.html；模板、选题记录(log.md)、每日科研跟踪(research-watch.md)、草稿都在 "Claude outputs/newsletter/"（不上传）。
+- 每期须经站长确认后才发布；目前不群发邮件。
+- 2026-10-22 补充：每期同时出 PDF 小册页（5.5×8.5 英寸，两页，中英文各一份，可打印收藏），发布在 newsletter/pdf/mindcadence-newsletter-NN-en.pdf / -zh.pdf，
+  期刊网页上有"下载本期（PDF）"链接。每期内容写在一个 content.json 里，用 "Claude outputs/newsletter/kit/" 里的 make_issue.py + render_pdf.js
+  一次生成网页和 PDF（见 kit/README.md）。旧的 template-*.html 已移到 old-templates/，不再使用。Word 版仅在有需要时另做。
