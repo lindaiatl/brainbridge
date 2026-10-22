@@ -984,3 +984,43 @@ html[lang^="zh"] .story-kicker { letter-spacing: 0.08em; }
 
 /* Chinese logo: "脑韵" followed by the English wordmark */
 .logo-text-en { margin-left: 0.3em; }
+
+/* ---- Newsletter page ---- */
+.newsletter-copy .link-underline { align-self: flex-start; }
+.nl-subscribe .newsletter-copy { max-width: 640px; }
+.issue-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-3);
+}
+.issue-card,
+.issue-empty {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: var(--space-4);
+  background: var(--surface-plain);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+  text-decoration: none;
+  color: inherit;
+}
+.issue-card:hover { border-color: var(--line-cool); }
+.issue-no, .issue-date {
+  font: var(--fw-semibold) var(--fs-eyebrow)/1.2 var(--font-body);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+.issue-date { color: var(--ink-500); }
+.issue-card h3, .issue-empty h3 {
+  margin: 0;
+  font: var(--fw-semibold) var(--fs-h3)/var(--lh-h3) var(--font-display);
+  color: var(--ink-900);
+}
+.issue-card p, .issue-empty p {
+  margin: 0;
+  font: var(--fw-regular) var(--fs-small)/var(--lh-small) var(--font-body);
+  color: var(--ink-600);
+}
+.issue-empty { grid-column: 1 / -1; max-width: 640px; border-style: dashed; }

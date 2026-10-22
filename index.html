@@ -24,9 +24,8 @@
     <nav class="nav">
       <a class="nav-link" href="#three">How we help</a>
       <a class="nav-link" href="#about">About</a>
-      <a class="nav-link" href="#articles">Articles</a>
-      <a class="nav-link" href="resources.html">Resources</a>
-      <a class="nav-link" href="#newsletter">Newsletter</a>
+      <a class="nav-link" href="articles.html">Articles</a>
+      <a class="nav-link" href="newsletter.html">Newsletter</a>
       <a class="btn btn-outline" href="https://calendly.com/lindai-atl/30min" target="_blank" rel="noopener">Book a Call</a>
       <a class="btn btn-primary" href="#articles">Come In</a>
       <span class="lang-switch"><span class="lang-current" aria-current="true">EN</span><span class="lang-sep">/</span><a href="zh/index.html" hreflang="zh-Hans" lang="zh-Hans">中文</a></span>
@@ -42,7 +41,7 @@
       <div class="hero-actions">
         <a class="btn btn-primary btn-cta" href="#articles">Come In</a>
         <a class="btn btn-outline btn-cta" href="https://calendly.com/lindai-atl/30min" target="_blank" rel="noopener">Book a Call</a>
-        <a class="link-underline" href="#newsletter">Join the newsletter →</a>
+        <a class="link-underline" href="newsletter.html">Read the newsletter →</a>
       </div>
     </div>
     <div class="hero-image">
@@ -92,10 +91,10 @@
   <div id="articles" class="section">
     <div class="articles-head">
       <div class="section-head" style="margin-bottom:0;">
-        <div class="eyebrow">Featured articles &amp; resources</div>
+        <div class="eyebrow">Featured articles</div>
         <h2>Reading to help you understand</h2>
       </div>
-      <a class="browse-link" href="#articles">Browse all resources →</a>
+      <a class="browse-link" href="articles.html">Browse all articles →</a>
     </div>
     <div class="article-grid">
 
@@ -154,15 +153,18 @@
   <div id="newsletter" class="section section-tint-green">
     <div class="newsletter-grid">
       <div class="newsletter-copy">
-        <div class="eyebrow">Stay connected</div>
+        <div class="eyebrow">The MindCadence Newsletter</div>
         <h2>A calm, trustworthy note in your inbox.</h2>
-        <p>New writing on the brain, caregiving, and hope — a few thoughtful emails a month. No noise, no jargon, ever.</p>
+        <p>Twice a month: new brain research explained in plain language, practical help for caregivers, and new writing from MindCadence. No noise, no jargon, ever.</p>
+        <a class="link-underline" href="newsletter.html">Read the newsletter →</a>
 
         <div id="newsletter-success" class="newsletter-success">Thank you — you're on the list. Welcome to MindCadence.</div>
 
-        <form id="newsletter-form" class="newsletter-form">
+        <form id="newsletter-form" class="newsletter-form" action="https://formspree.io/f/xojggagy" method="POST" data-error="Something went wrong. Please try again, or email us directly.">
+          <input type="hidden" name="_subject" value="New newsletter subscriber">
+          <input type="hidden" name="form" value="newsletter">
           <div class="newsletter-row">
-            <input id="newsletter-email" class="input" type="email" placeholder="you@email.com" required>
+            <input id="newsletter-email" class="input" type="email" name="email" placeholder="you@email.com" required>
             <button type="submit" class="btn btn-primary">Subscribe</button>
           </div>
           <span class="form-hint">We'll never share your email. Unsubscribe anytime.</span>
@@ -193,9 +195,8 @@
     <div class="footer-nav">
       <a href="#three">How we help</a>
       <a href="#about">About</a>
-      <a href="#articles">Articles</a>
-      <a href="resources.html">Resources</a>
-      <a href="#newsletter">Newsletter</a>
+      <a href="articles.html">Articles</a>
+      <a href="newsletter.html">Newsletter</a>
       <a href="mailto:lindai.atl@gmail.com">lindai.atl@gmail.com</a>
     </div>
     <span class="footer-copyright">© 2026 MindCadence · Understanding, together.</span>
@@ -272,20 +273,33 @@
 </script>
 
 <script>
-  var form = document.getElementById('newsletter-form');
-  var emailInput = document.getElementById('newsletter-email');
-  var success = document.getElementById('newsletter-success');
-
-  form.addEventListener('submit', function (event) {
-    event.preventDefault();
-    var value = emailInput.value;
-    if (!value || value.indexOf('@') === -1) {
-      emailInput.focus();
-      return;
-    }
-    form.classList.add('is-hidden');
-    success.classList.add('is-visible');
-  });
+  // Newsletter sign-up: sends the address to Formspree (arrives in the MindCadence inbox).
+  (function () {
+    var form = document.getElementById('newsletter-form');
+    if (!form) return;
+    var emailInput = document.getElementById('newsletter-email');
+    var success = document.getElementById('newsletter-success');
+    var hint = form.querySelector('.form-hint');
+    var hintText = hint ? hint.textContent : '';
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      var value = emailInput.value;
+      if (!value || value.indexOf('@') === -1) { emailInput.focus(); return; }
+      var data = new FormData(form);
+      var btn = form.querySelector('button');
+      btn.disabled = true;
+      fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
+        .then(function (r) {
+          if (!r.ok) throw new Error('bad');
+          form.classList.add('is-hidden');
+          success.classList.add('is-visible');
+        })
+        .catch(function () {
+          btn.disabled = false;
+          if (hint) hint.textContent = form.getAttribute('data-error') || hintText;
+        });
+    });
+  })();
 </script>
 
 </body>

@@ -85,3 +85,15 @@ MindCadence 帮助人们通过可信的科学、有温度的写作和富有同�
 ## 视觉规范
 配色 hex、字体规范、间距等所有 visual specs 一律参考 design-system.md,
 不在本文件中重复。
+
+## 2026-10-22 更新：导航调整
+- Articles 与 Resources 合并为 **Articles / 文章**:全部文章列表页改名 articles.html / zh/articles.html(原 resources.html 内容)。
+  resources.html / zh/resources.html 现在只是跳转页(自动转到 articles.html),保留是为了旧链接不失效。
+  以后新增文章卡片加在 articles.html(及 zh/articles.html),不要再改 resources.html。上文提到 resources.html 的地方都按 articles.html 理解。
+- 全站导航统一为：How we help · About · Articles · Newsletter(中文：我们如何帮助 · 关于我们 · 文章 · 资讯简报)。
+  文章页 "Related resources" 改为 "Related articles"。
+- 新建 **Newsletter / 资讯简报** 页:newsletter.html / zh/newsletter.html。每月两期。页面有：简介、订阅表单、"每期内容"、往期列表(#issues)。
+  目前往期列表是"第一期即将推出"的占位卡片;出第一期时，新建 newsletter/issue-01.html(及 zh/newsletter/issue-01.html),
+  在 .issue-list 里按 HTML 注释中的模板加一张 .issue-card(最新的放最前),并删掉 .issue-empty。
+- 订阅表单(首页和简报页)现在真正提交到 Formspree(https://formspree.io/f/xojggagy,与联系表单同一个),
+  主题为 "New newsletter subscriber" / "资讯简报订阅",订阅邮箱会发到网站邮箱。之前的订阅表单只显示"谢谢"、并没有保存邮箱。

@@ -24,9 +24,8 @@
     <nav class="nav">
       <a class="nav-link" href="#three">我们如何帮助</a>
       <a class="nav-link" href="#about">关于我们</a>
-      <a class="nav-link" href="#articles">文章</a>
-      <a class="nav-link" href="resources.html">资源</a>
-      <a class="nav-link" href="#newsletter">订阅通讯</a>
+      <a class="nav-link" href="articles.html">文章</a>
+      <a class="nav-link" href="newsletter.html">资讯简报</a>
       <a class="btn btn-outline" href="https://calendly.com/lindai-atl/30min" target="_blank" rel="noopener">预约通话</a>
       <a class="btn btn-primary" href="#articles">进来看看</a>
       <span class="lang-switch"><a href="../index.html" hreflang="en" lang="en">EN</a><span class="lang-sep">/</span><span class="lang-current" aria-current="true">中文</span></span>
@@ -42,7 +41,7 @@
       <div class="hero-actions">
         <a class="btn btn-primary btn-cta" href="#articles">进来看看</a>
         <a class="btn btn-outline btn-cta" href="https://calendly.com/lindai-atl/30min" target="_blank" rel="noopener">预约通话</a>
-        <a class="link-underline" href="#newsletter">订阅通讯 →</a>
+        <a class="link-underline" href="newsletter.html">阅读资讯简报 →</a>
       </div>
     </div>
     <div class="hero-image">
@@ -92,10 +91,10 @@
   <div id="articles" class="section">
     <div class="articles-head">
       <div class="section-head" style="margin-bottom:0;">
-        <div class="eyebrow">精选文章与资源</div>
+        <div class="eyebrow">精选文章</div>
         <h2>帮助你理解的阅读</h2>
       </div>
-      <a class="browse-link" href="#articles">浏览全部资源 →</a>
+      <a class="browse-link" href="articles.html">浏览全部文章 →</a>
     </div>
     <div class="article-grid">
 
@@ -154,15 +153,18 @@
   <div id="newsletter" class="section section-tint-green">
     <div class="newsletter-grid">
       <div class="newsletter-copy">
-        <div class="eyebrow">保持联系</div>
+        <div class="eyebrow">脑韵资讯简报</div>
         <h2>一封平静、可信的来信。</h2>
-        <p>关于大脑、照护与希望的新文章——每月几封用心的邮件。没有打扰，也没有术语。</p>
+        <p>每月两期：用平实的语言解读脑科学新进展，给照护者的实用建议，以及脑韵的新文章。没有打扰，也没有术语。</p>
+        <a class="link-underline" href="newsletter.html">阅读资讯简报 →</a>
 
         <div id="newsletter-success" class="newsletter-success">谢谢你——订阅成功。欢迎来到脑韵。</div>
 
-        <form id="newsletter-form" class="newsletter-form">
+        <form id="newsletter-form" class="newsletter-form" action="https://formspree.io/f/xojggagy" method="POST" data-error="出了点问题，请稍后再试，或直接给我们写信。">
+          <input type="hidden" name="_subject" value="资讯简报订阅">
+          <input type="hidden" name="form" value="newsletter">
           <div class="newsletter-row">
-            <input id="newsletter-email" class="input" type="email" placeholder="你的邮箱地址" required>
+            <input id="newsletter-email" class="input" type="email" name="email" placeholder="你的邮箱地址" required>
             <button type="submit" class="btn btn-primary">订阅</button>
           </div>
           <span class="form-hint">我们绝不会分享你的邮箱，可随时退订。</span>
@@ -193,9 +195,8 @@
     <div class="footer-nav">
       <a href="#three">我们如何帮助</a>
       <a href="#about">关于我们</a>
-      <a href="#articles">文章</a>
-      <a href="resources.html">资源</a>
-      <a href="#newsletter">订阅通讯</a>
+      <a href="articles.html">文章</a>
+      <a href="newsletter.html">资讯简报</a>
       <a href="mailto:lindai.atl@gmail.com">lindai.atl@gmail.com</a>
     </div>
     <span class="footer-copyright">© 2026 脑韵 MindCadence · 一起理解，彼此陪伴。</span>
@@ -272,20 +273,33 @@
 </script>
 
 <script>
-  var form = document.getElementById('newsletter-form');
-  var emailInput = document.getElementById('newsletter-email');
-  var success = document.getElementById('newsletter-success');
-
-  form.addEventListener('submit', function (event) {
-    event.preventDefault();
-    var value = emailInput.value;
-    if (!value || value.indexOf('@') === -1) {
-      emailInput.focus();
-      return;
-    }
-    form.classList.add('is-hidden');
-    success.classList.add('is-visible');
-  });
+  // Newsletter sign-up: sends the address to Formspree (arrives in the MindCadence inbox).
+  (function () {
+    var form = document.getElementById('newsletter-form');
+    if (!form) return;
+    var emailInput = document.getElementById('newsletter-email');
+    var success = document.getElementById('newsletter-success');
+    var hint = form.querySelector('.form-hint');
+    var hintText = hint ? hint.textContent : '';
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      var value = emailInput.value;
+      if (!value || value.indexOf('@') === -1) { emailInput.focus(); return; }
+      var data = new FormData(form);
+      var btn = form.querySelector('button');
+      btn.disabled = true;
+      fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
+        .then(function (r) {
+          if (!r.ok) throw new Error('bad');
+          form.classList.add('is-hidden');
+          success.classList.add('is-visible');
+        })
+        .catch(function () {
+          btn.disabled = false;
+          if (hint) hint.textContent = form.getAttribute('data-error') || hintText;
+        });
+    });
+  })();
 </script>
 
 </body>

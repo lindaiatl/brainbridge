@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Newsletter — MindCadence</title>
+<meta name="description" content="The MindCadence Newsletter: twice a month, new brain research explained in plain language, practical help for caregivers, and new writing from MindCadence.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="alternate" hreflang="en" href="https://www.mindcadence.org/newsletter.html">
+<link rel="alternate" hreflang="zh-Hans" href="https://www.mindcadence.org/zh/newsletter.html">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<section class="shell">
+
+  <header class="site-header">
+    <a class="logo" href="index.html">
+      <div class="logo-mark"></div>
+      <span class="logo-text">MindCadence</span>
+    </a>
+    <nav class="nav">
+      <a class="nav-link" href="index.html#three">How we help</a>
+      <a class="nav-link" href="index.html#about">About</a>
+      <a class="nav-link" href="articles.html">Articles</a>
+      <a class="nav-link is-active" href="newsletter.html">Newsletter</a>
+      <a class="btn btn-primary" href="index.html#articles">Come In</a>
+      <span class="lang-switch"><span class="lang-current" aria-current="true">EN</span><span class="lang-sep">/</span><a href="zh/newsletter.html" hreflang="zh-Hans" lang="zh-Hans">中文</a></span>
+    </nav>
+  </header>
+
+  <div class="resources-intro">
+    <div class="eyebrow">The MindCadence Newsletter</div>
+    <h1 class="article-title">News and insight on the brain, twice a month</h1>
+    <p>A short, carefully sourced briefing for patients, caregivers, and anyone trying to understand the mind. What&rsquo;s new in brain research, what it means for real families, and something to help you breathe a little easier.</p>
+  </div>
+
+  <!-- SUBSCRIBE -->
+  <div class="section section-tint-green nl-subscribe">
+    <div class="newsletter-copy">
+      <h2>Get each issue in your inbox</h2>
+      <p>Free, twice a month. No noise, no jargon, and your email is never shared.</p>
+      <div id="newsletter-success" class="newsletter-success">Thank you — you&rsquo;re on the list. Your first issue is on its way.</div>
+      <form id="newsletter-form" class="newsletter-form" action="https://formspree.io/f/xojggagy" method="POST" data-error="Something went wrong. Please try again, or email us directly.">
+          <input type="hidden" name="_subject" value="New newsletter subscriber">
+          <input type="hidden" name="form" value="newsletter">
+        <div class="newsletter-row">
+          <input id="newsletter-email" class="input" type="email" name="email" placeholder="you@email.com" required>
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </div>
+        <span class="form-hint">Unsubscribe anytime.</span>
+      </form>
+    </div>
+  </div>
+
+  <!-- IN EVERY ISSUE -->
+  <div class="section">
+    <div class="section-head">
+      <div class="eyebrow">In every issue</div>
+    </div>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-icon feature-icon--blue"><div class="icon-diamond"></div></div>
+        <h3>Research, in plain language</h3>
+        <p>One or two new findings on the brain and neurological illness: what was found, how sure we can be, and what it does and doesn&rsquo;t mean for you.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon feature-icon--green"><div class="icon-ring"></div></div>
+        <h3>For caregivers</h3>
+        <p>A practical idea, a resource worth knowing about, or a gentle reminder to care for yourself too.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon feature-icon--blue"><div class="icon-drop"></div></div>
+        <h3>New from MindCadence</h3>
+        <p>The latest articles and Stories of Hope, plus a moment of calm from art and nature.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ISSUES ARCHIVE -->
+  <div id="issues" class="section section-tint-blue">
+    <div class="section-head">
+      <div class="eyebrow">All issues</div>
+    </div>
+    <div class="issue-list">
+      <!-- New issues go here, newest first. Copy this block for each issue:
+      <a class="issue-card" href="newsletter/issue-01.html">
+        <span class="issue-no">No. 1</span>
+        <span class="issue-date">Nov 2026</span>
+        <h3>Issue headline</h3>
+        <p>One-sentence summary of what is inside.</p>
+      </a>
+      -->
+      <div class="issue-empty">
+        <h3>Issue No. 1 is on its way</h3>
+        <p>The first issue will appear here — and in subscribers&rsquo; inboxes — soon. New issues are published twice a month.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="logo">
+      <div class="logo-mark logo-mark--sm"></div>
+      <span class="logo-text logo-text--sm">MindCadence</span>
+    </div>
+    <div class="footer-nav">
+      <a href="index.html#three">How we help</a>
+      <a href="index.html#about">About</a>
+      <a href="articles.html">Articles</a>
+      <a href="newsletter.html">Newsletter</a>
+      <a href="mailto:lindai.atl@gmail.com">lindai.atl@gmail.com</a>
+    </div>
+    <span class="footer-copyright">© 2026 MindCadence · Understanding, together.</span>
+  </footer>
+
+  </section>
+
+<script>
+  // Newsletter sign-up: sends the address to Formspree (arrives in the MindCadence inbox).
+  (function () {
+    var form = document.getElementById('newsletter-form');
+    if (!form) return;
+    var emailInput = document.getElementById('newsletter-email');
+    var success = document.getElementById('newsletter-success');
+    var hint = form.querySelector('.form-hint');
+    var hintText = hint ? hint.textContent : '';
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      var value = emailInput.value;
+      if (!value || value.indexOf('@') === -1) { emailInput.focus(); return; }
+      var data = new FormData(form);
+      var btn = form.querySelector('button');
+      btn.disabled = true;
+      fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
+        .then(function (r) {
+          if (!r.ok) throw new Error('bad');
+          form.classList.add('is-hidden');
+          success.classList.add('is-visible');
+        })
+        .catch(function () {
+          btn.disabled = false;
+          if (hint) hint.textContent = form.getAttribute('data-error') || hintText;
+        });
+    });
+  })();
+</script>
+
+</body>
+</html>
