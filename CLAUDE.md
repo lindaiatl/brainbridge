@@ -10,12 +10,12 @@ MindCadence 帮助人们通过可信的科学、有温度的写作和富有同�
 更好地理解大脑、疾病、照护与生活。让脑科学连接普通人的真实生活。
 
 ## 目标受众
-希望更好理解生活的人 —— 尤其是患者、照护者、家属,以及对神经科学感兴趣的读者。
+希望更好理解生活的人 —— 尤其是患者、看护者、家属,以及对神经科学感兴趣的读者。
 
 ## 我们提供什么
 - 脑健康科普:用平实语言解释大脑与神经疾病
 - 研究解读:把前沿神经科学转化为可读、可信的内容
-- 照护支持:给家属与照护者的实用、温柔的指引
+- 照护支持:给家属与看护者的实用、温柔的指引
 - 科学生活方式:关于艺术、自然与疗愈的反思,传递希望与陪伴
 
 ## Tone
@@ -76,10 +76,10 @@ MindCadence 帮助人们通过可信的科学、有温度的写作和富有同�
 - 修正：九篇中文希望故事页的语言切换原来把 EN 标成当前页，已改为 EN 链接 + 中文为当前。
 
 ## 2026-10-21 更新
-- 照护者栏目新增第二篇：give-my-time.html / zh/give-my-time.html(I Give You My Time / 我把时间献给你，Lindai 的随笔),
+- 看护者栏目新增第二篇：give-my-time.html / zh/give-my-time.html(I Give You My Time / 我把时间献给你，Lindai 的随笔),
   配图 give-my-time.jpg,背景音乐 give-my-time.mp3(原 velariomusic-relaxing-music),来源桌面 GiveMyTime 文件夹。
   英文页署名 Lindai,中文页不署名(同希望的故事)。朗读用浏览器 speechSynthesis。副标题由 Claude 撰写。
-- 新建照护者目录页 caregivers-articles.html / zh/caregivers-articles.html,首页"A Guide for Caregivers / 照护者指南"卡片指向它;
+- 新建看护者目录页 caregivers-articles.html / zh/caregivers-articles.html,首页"A Guide for Caregivers / 看护者指南"卡片指向它;
   caregivers.html 两个语言版本的返回链接也指向它。
 
 ## 视觉规范
@@ -100,7 +100,7 @@ MindCadence 帮助人们通过可信的科学、有温度的写作和富有同�
 
 ## 资讯简报（Newsletter）编辑方针 — 2026-10-22
 - 每月两期：1 日「研究与发现 Research & Discovery」（阿尔茨海默病机制、早期诊断、生物标志物、治疗、临床试验）；
-  15 日「心灵与人文 Mind & Humanity」（患者、家属、照护者的生活体验，结合脑科学、心理学、音乐、艺术、文学）。
+  15 日「心灵与人文 Mind & Humanity」（患者、家属、看护者的生活体验，结合脑科学、心理学、音乐、艺术、文学）。
 - 三分钟读完，三个栏目：① The Discovery｜科学新发现（英文 120–150 词，一项研究，回答发现了什么/为什么值得关注/对普通人意味着什么，附原始研究链接，标证据类型）
   ② The Human Side｜人文视角（80–100 词） ③ Worth Exploring｜延伸阅读（40–60 词，推荐一篇网站文章或一项研究）。
 - 配图：优先根据内容自制插图（放 newsletter/img/），或免费的公版原作；外部图片必须免费可用。
@@ -111,3 +111,28 @@ MindCadence 帮助人们通过可信的科学、有温度的写作和富有同�
   一次生成网页和 PDF（见 kit/README.md）。旧的 template-*.html 已移到 old-templates/，不再使用。Word 版仅在有需要时另做。
 - 2026-10-22：顶部导航去掉 "Come In / 进来看看" 按钮（与 Articles 重复）；首页大图里的 "Come In / 进来看看" 改为滚动到 #three（我们如何帮助），从头介绍网站。
   联系表单的输入框改为占满卡片宽度。
+- 2026-10-22：资讯简报创刊号（第 1 卷第 1 期，2026-11-01）已定稿放入网站：newsletter/issue-01.html、zh/newsletter/issue-01.html，
+  PDF 在 newsletter/pdf/，音乐与朗读在 newsletter/audio/（音乐 AudioCoffee《Peaceful Light Morning》，Pixabay；朗读 Ava/Tingting 录制），插图 newsletter/img/issue-01.svg。
+  newsletter.html / zh 的往期列表已换成创刊号卡片。站长计划 11 月 1 日 push 上线。
+  站长以后想用自己的声音朗读：她录好 mp3 放进当期草稿文件夹，在 content.json 的 "narration" 里填文件名即可。
+
+## 音乐清单（2026-10-22 建立）
+- "Claude outputs/MindCadence 音乐清单.xlsx"：每篇文章 / 每期简报一行（发布日期、类型、栏目、中英文标题、页面、音乐文件、音乐原名、作者、来源、时长、朗读文件、备注）。
+- **每次新增文章或发布一期简报，都要在“音乐清单”表最后加一行**（中英文共用一首音乐只写一行）。不知道的信息填“（待补充）”并标黄。
+- 该文件在 Claude outputs/ 里，不上传 GitHub；用 openpyxl 追加行，保持 Arial 字体和表格（Table "MusicList"）范围同步扩展。
+
+## 2026-10-23 更新
+- 网站联系邮箱改为 contact@mindcadence.org（全站 mailto 和显示文字）。Calendly 预约链接仍是 calendly.com/lindai-atl/30min。
+  Formspree 表单（联系 + 订阅）收件邮箱在 Formspree 后台设置，需要站长自己去改。
+- 中文用词：**所有"照护者"改为"看护者"**（全站已替换；以后新内容一律用"看护者"）。"照护"作动词/名词（如"照护方式"）暂未改。
+- 首页"用可信的科学认识疾病"卡片：中文"清晰、准确地讲解大脑与神经系统疾病——用通俗的语言，讲清复杂的科学。"，英文 "…— complex science, in plain language."
+- 资讯简报每月 1 日「研究与发现」扩展为：阿尔茨海默病 **及其他神经系统疾病** 的重要进展（简报页文字已改）。
+- 资讯简报创刊号已从网站文件夹移出，暂存在 "Claude outputs/newsletter/drafts/issue-01/publish/"（和 out/），以便今天的其他改动可以先 push。
+  11 月 1 日由提醒任务运行 kit/publish_issue.py 放回网站（期刊页、PDF、音频、往期卡片、首页"最新一期"）。
+- 首页 Newsletter 区块有 `<!-- LATEST-ISSUE --><!-- /LATEST-ISSUE -->` 占位，publish_issue.py 会填入"最新一期"预览（样式 .latest-issue）。
+- PDF 第二页左侧竖线改为浅绿色（print.css .p2::before），与第一页区分；第二页底部的图是第一页插图的下半部分（有意的呼应）。
+- 2026-10-23：**Book a Call / 预约通话暂停**（站长很珍惜这个渠道，但目前先取消，以后需要时再加）。首页大图和联系卡片里的按钮已改成 HTML 注释保留，
+  恢复时去掉注释即可。恢复时同时加上免责说明（草稿见对话：通话为非正式交流，不提供医疗/心理/法律建议，紧急情况拨 911，心理危机 988），并更新 Calendly 页面说明。
+- 2026-10-23：资讯简报刊头语（站长定）：英文 "Where Brain Science Meets Human Life" / 中文"脑科学与人生相遇的地方"；
+  副题 "Exploring the science of the mind and the beauty of being human" / "探索心智的科学，感受生命的人文之美"。
+  用在：简报介绍页大标题+副题（.nl-tagline-sub）、每期网页期号上方（.nl-tagline）、PDF 第一页标志下（.p-motto）、PDF 第二页页脚。网站首页仍用原标语。
