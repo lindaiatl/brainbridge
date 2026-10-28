@@ -151,3 +151,6 @@ MindCadence 帮助人们通过可信的科学、有温度的写作和富有同�
   配图 bachelor-three-graces.jpg（友人照片，已获授权，文末注明）；背景音乐 bachelor-three-graces.mp3（Pixabay welc0mei0 "Piano Nostalgic Waltz"）；朗读用浏览器。
   中文稿小改：空格、"得来全不费工夫"、"不想不知道，记忆真奇妙"；原稿引用的两句歌词改为转述（歌词有版权；英文原稿本来就是转述）。
   新建疗愈目录页 healing-articles.html / zh/healing-articles.html；首页疗愈卡片和 healing.html 返回链接指向它；articles.html 加卡片；音乐清单已加一行。
+- 背景音乐音量标准（2026-10-28）：新加的背景音乐一律用 ffmpeg loudnorm 统一到约 **-20 LUFS**（多数文章的音乐在 -20 ~ -22 LUFS）。
+  例：ffmpeg -i 原文件.mp3 -af "loudnorm=I=-20:TP=-2:LRA=11" -ar 44100 -codec:a libmp3lame -b:a 128k -map_metadata -1 输出.mp3
+  bachelor-three-graces.mp3 已从 -11.3 调到 -20。首页 music.mp3（-10.5）和 give-my-time.mp3（-15.5）偏大，未改，待站长决定。
