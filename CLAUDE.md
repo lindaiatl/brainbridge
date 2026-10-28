@@ -144,3 +144,10 @@ MindCadence 帮助人们通过可信的科学、有温度的写作和富有同�
   （"你的邮箱地址只用于接收脑韵资讯简报，不会与第三方分享。你可以随时退订。"，首页和简报页都用）、联系卡片文字、
   导航/页脚"我们如何帮助"→"我们如何提供帮助"、简报页"每月两期"和"每期内容"各段、中文页脚标语改为"理解大脑，关怀生命"。
   中文全站称呼读者一律用"你"（不用"您"；文章里教读者对医生说的话除外）。
+- 2026-10-28：首页栏目卡片**不再写篇数**（中英文的 "Two articles, so far" / "Nine stories, so far" / "目前共两篇"等都已取消；以后加文章也不要再写）。
+  英文页脚标语 "Understanding, together." → "**Understanding the brain, caring for life**"（与中文"理解大脑，关怀生命"对应；22 页 + 简报工具）。
+  中文简报介绍页顶部段落改为新说法（"写给患者、看护者……每月两期，每期只需三分钟阅读……可以一期一期收集成册。"）。
+- 2026-10-28：疗愈栏目第二篇 **bachelor-three-graces.html / zh/bachelor-three-graces.html**（A Bachelor, Three Beauties, and a Song from Long Ago / 优胜美地的桃花运，Lindai 随笔，桌面"优胜美地"文件夹）。
+  配图 bachelor-three-graces.jpg（友人照片，已获授权，文末注明）；背景音乐 bachelor-three-graces.mp3（Pixabay welc0mei0 "Piano Nostalgic Waltz"）；朗读用浏览器。
+  中文稿小改：空格、"得来全不费工夫"、"不想不知道，记忆真奇妙"；原稿引用的两句歌词改为转述（歌词有版权；英文原稿本来就是转述）。
+  新建疗愈目录页 healing-articles.html / zh/healing-articles.html；首页疗愈卡片和 healing.html 返回链接指向它；articles.html 加卡片；音乐清单已加一行。
