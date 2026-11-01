@@ -154,3 +154,4 @@ MindCadence 帮助人们通过可信的科学、有温度的写作和富有同�
 - 背景音乐音量标准（2026-10-28）：新加的背景音乐一律用 ffmpeg loudnorm 统一到约 **-20 LUFS**（多数文章的音乐在 -20 ~ -22 LUFS）。
   例：ffmpeg -i 原文件.mp3 -af "loudnorm=I=-20:TP=-2:LRA=11" -ar 44100 -codec:a libmp3lame -b:a 128k -map_metadata -1 输出.mp3
   10/28 已把全站偏响的背景音乐统一调到约 -20 LUFS（首页 music、各文章、希望故事、创刊号音乐）；较轻的（-20 ~ -23.5）未动。
+- 2026-11-01：创刊号（第 1 卷第 1 期）已用 publish_issue.py 放回网站（期刊页、PDF 竖版/横版、音频、往期卡片、首页最新一期），站长 push 上线。
