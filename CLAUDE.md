@@ -165,3 +165,4 @@ MindCadence 帮助人们通过可信的科学、有温度的写作和富有同�
 - 首页大标题上方小字（2026-11-01）：中文"初心 · 科学 · 人文"（站长选）；英文 "Purpose · Science · Humanity"（Claude 把关：与中文同为意译，单独出现也能看懂；"Rooted · Grounded · Guided" 留给完整宣言句使用）。
 
 - 2026-11-01 首页“关于脑韵”段落定稿：创始人表述为“一位热爱写作的神经科学家” / "a neuroscientist who also loves to write"（创始人做过阿尔茨海默病、脊髓再生、脆性 X 综合征研究，论文发表于 PNAS）；前半句介绍创始人，后半句以“脑韵 / MindCadence”为主语；不用“我们”，英文不用 she（避免过于个人化，也适合以后多人参与）。其他页面提到创始人时保持同一说法。
+- 2026-11-01 首页加"最近更新 / What's New"(大图正下方，大图上下留白略减):只放最新 3 条(类型 · 标题 · 日期)，"查看全部 →" 链到 articles.html。内容在 index.html / zh/index.html 的 `<!-- WHATS-NEW -->` 标记之间。发布简报时 kit/publish_issue.py 自动加入;发布新文章后运行 `python3 "Claude outputs/newsletter/kit/whats_new.py" . <文件名.html> <YYYY-MM-DD> "<EN 类型>" "<EN 标题>" "<中文类型>" "<中文标题>"`。
