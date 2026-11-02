@@ -379,6 +379,18 @@ button, input, textarea { font-family: inherit; }
   font: var(--fw-regular) 18px/1.7 var(--font-body);
   color: var(--ink-600);
 }
+/* 定位宣言（2026-11-02）：首页"关于脑韵"标题下方 */
+.about-copy p.about-mission {
+  margin-top: -8px;
+  font: italic var(--fw-regular) 20px/1.5 var(--font-display);
+  color: var(--teal-muted);
+}
+html[lang^="zh"] .about-copy p.about-mission {
+  font-style: normal;
+  font-family: var(--font-body);
+  font-size: 18px;
+  letter-spacing: 0.04em;
+}
 .pull-quote {
   margin: 8px 0 0;
   padding: 22px 26px;

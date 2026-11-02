@@ -161,6 +161,7 @@ MindCadence 帮助人们通过可信的科学、有温度的写作和富有同�
 - 英文：**Rooted in Alzheimer’s, grounded in neuroscience, guided by humanity.**
 - 补充：科学给它深度，文学给它温度，音乐给它韵律。
 - 将来若放到网站上，首选首页"关于脑韵 / About"那一段（标题"科学，应当准确、易懂，而且温柔"的上方或下方）。
+- 2026-11-02：已放上首页"关于脑韵 / About"标题正下方（p.about-mission，styles.css 有对应样式；英文斜体衬线，中文正体）。原引言"每一个大脑都属于一个人……"保留。
 - 音乐/图片致谢：先补全音乐清单（曲名、作者、来源），再建"致谢与鸣谢 / Credits"页面逐项列出，页脚放链接；不要写笼统的"主要来自 Pixabay"，除非已核实。
 - 首页大标题上方小字（2026-11-01）：中文"初心 · 科学 · 人文"（站长选）；英文 "Purpose · Science · Humanity"（Claude 把关：与中文同为意译，单独出现也能看懂；"Rooted · Grounded · Guided" 留给完整宣言句使用）。
 
