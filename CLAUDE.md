@@ -170,6 +170,6 @@ MindCadence 帮助人们通过可信的科学、有温度的写作和富有同�
 
 - 2026-11-03：看护者栏目第三篇 **feelings-memory.html / zh/feelings-memory.html**（She May Forget the Visit, but Not the Feeling / 忘了你说过的话，却记得你给的感觉），计划 11 月 10 日发布。
   研究解读：Feinstein 2010 PNAS、Guzmán-Vélez 2014 Cogn Behav Neurol、Klein-Koerkamp 2012 综述；署名"脑韵团队"/"The MindCadence Team"，朗读用浏览器。
-  配图 feelings-memory.jpg（站长用 ChatGPT 生成，原文件 ChatGPT Image Nov 3, 2026, 07_17_59 PM.png）；背景音乐 feelings-memory.mp3（原 billy_ziogas-slow-jamming-master-track-240885，Pixabay，已调到约 -20 LUFS）。
+  配图 feelings-memory.jpg（站长用 ChatGPT 生成，原文件 ChatGPT Image Nov 3, 2026, 07_17_59 PM.png）；背景音乐 feelings-memory.mp3（原 billy_ziogas-slow-jamming-master-track-240885，Pixabay；这首节奏感强、几乎没有轻重起伏，按 -20 LUFS 听着偏响，站长反馈后调到约 -24 LUFS）。
   已加入 articles.html、caregivers-articles.html（目录第 03 篇）及中文版，首页"最近更新"已加（日期 11/10）；音乐清单已加一行。
 - 2026-11-03：音乐清单补全——站长"下载"文件夹里的原始文件经声音比对，确认首页、healing、hope、MomColdWarm、MomWork、MomPalm、MomSea 的原曲（来源标"Pixabay（待核实）"）；补上漏记的 bachelor-three-graces 一行。仍不明：MomFlowers、MomDreamed、MomDay、MomMiss、alz、caregivers、brain-health、neuroscience。
