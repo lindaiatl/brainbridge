@@ -167,3 +167,9 @@ MindCadence 帮助人们通过可信的科学、有温度的写作和富有同�
 
 - 2026-11-01 首页“关于脑韵”段落定稿：创始人表述为“一位热爱写作的神经科学家” / "a neuroscientist who also loves to write"（创始人做过阿尔茨海默病、脊髓再生、脆性 X 综合征研究，论文发表于 PNAS）；前半句介绍创始人，后半句以“脑韵 / MindCadence”为主语；不用“我们”，英文不用 she（避免过于个人化，也适合以后多人参与）。其他页面提到创始人时保持同一说法。
 - 2026-11-01 首页加"最近更新 / What's New"(大图正下方，大图上下留白略减):只放最新 3 条(类型 · 标题 · 日期)，"查看全部 →" 链到 articles.html。内容在 index.html / zh/index.html 的 `<!-- WHATS-NEW -->` 标记之间。发布简报时 kit/publish_issue.py 自动加入;发布新文章后运行 `python3 "Claude outputs/newsletter/kit/whats_new.py" . <文件名.html> <YYYY-MM-DD> "<EN 类型>" "<EN 标题>" "<中文类型>" "<中文标题>"`。
+
+- 2026-11-03：看护者栏目第三篇 **feelings-memory.html / zh/feelings-memory.html**（She May Forget the Visit, but Not the Feeling / 忘了你说过的话，却记得你给的感觉），计划 11 月 10 日发布。
+  研究解读：Feinstein 2010 PNAS、Guzmán-Vélez 2014 Cogn Behav Neurol、Klein-Koerkamp 2012 综述；署名"脑韵团队"/"The MindCadence Team"，朗读用浏览器。
+  配图 feelings-memory.jpg（站长用 ChatGPT 生成，原文件 ChatGPT Image Nov 3, 2026, 07_17_59 PM.png）；背景音乐 feelings-memory.mp3（原 billy_ziogas-slow-jamming-master-track-240885，Pixabay，已调到约 -20 LUFS）。
+  已加入 articles.html、caregivers-articles.html（目录第 03 篇）及中文版，首页"最近更新"已加（日期 11/10）；音乐清单已加一行。
+- 2026-11-03：音乐清单补全——站长"下载"文件夹里的原始文件经声音比对，确认首页、healing、hope、MomColdWarm、MomWork、MomPalm、MomSea 的原曲（来源标"Pixabay（待核实）"）；补上漏记的 bachelor-three-graces 一行。仍不明：MomFlowers、MomDreamed、MomDay、MomMiss、alz、caregivers、brain-health、neuroscience。
