@@ -172,4 +172,4 @@ MindCadence 帮助人们通过可信的科学、有温度的写作和富有同�
   研究解读：Feinstein 2010 PNAS、Guzmán-Vélez 2014 Cogn Behav Neurol、Klein-Koerkamp 2012 综述；署名"脑韵团队"/"The MindCadence Team"，朗读用浏览器。
   配图 feelings-memory.jpg（站长用 ChatGPT 生成，原文件 ChatGPT Image Nov 3, 2026, 07_17_59 PM.png）；背景音乐 feelings-memory.mp3（原 billy_ziogas-slow-jamming-master-track-240885，Pixabay；这首节奏感强、几乎没有轻重起伏，按 -20 LUFS 听着偏响，站长反馈后调到约 -24 LUFS）。
   已加入 articles.html、caregivers-articles.html（目录第 03 篇）及中文版，首页"最近更新"已加（日期 11/10）；音乐清单已加一行。
-- 2026-11-03：音乐清单补全——站长"下载"文件夹里的原始文件经声音比对，确认首页、healing、hope、MomColdWarm、MomWork、MomPalm、MomSea 的原曲（来源标"Pixabay（待核实）"）；补上漏记的 bachelor-three-graces 一行。仍不明：MomFlowers、MomDreamed、MomDay、MomMiss、alz、caregivers、brain-health、neuroscience。
+- 2026-11-03：音乐清单补全——站长"下载"文件夹里的原始文件经声音比对，确认首页、healing、hope、MomColdWarm、MomWork、MomPalm、MomSea 的原曲（来源标"Pixabay（待核实）"）；补上漏记的 bachelor-three-graces 一行。随后合并了站长自己补充的记录（来源均为 Pixabay；作者名 Ieberch 统一为 leberch）。仍不明：MomMiss 曲名、caregivers 曲名与作者；brain-health 待确认（见清单备注）。
