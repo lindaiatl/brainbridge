@@ -173,3 +173,8 @@ MindCadence 帮助人们通过可信的科学、有温度的写作和富有同�
   配图 feelings-memory.jpg（站长用 ChatGPT 生成，原文件 ChatGPT Image Nov 3, 2026, 07_17_59 PM.png）；背景音乐 feelings-memory.mp3（原 billy_ziogas-slow-jamming-master-track-240885，Pixabay；这首节奏感强、几乎没有轻重起伏，按 -20 LUFS 听着偏响，站长反馈后调到约 -24 LUFS）。
   已加入 articles.html、caregivers-articles.html（目录第 03 篇）及中文版，首页"最近更新"已加（日期 11/10）；音乐清单已加一行。
 - 2026-11-03：音乐清单补全——站长"下载"文件夹里的原始文件经声音比对，确认首页、healing、hope、MomColdWarm、MomWork、MomPalm、MomSea 的原曲（来源标"Pixabay（待核实）"）；补上漏记的 bachelor-three-graces 一行。随后合并了站长自己补充的记录（来源均为 Pixabay；作者名 Ieberch 统一为 leberch）。仍不明：MomMiss 曲名、caregivers 曲名与作者；brain-health 待确认（见清单备注）。
+
+- 2026-11-13 排期调整（站长定）：新栏目「脑韵随笔 · 心灵小憩」/ MindCadence Notes — A Moment's Rest，11/20 以《漫漫的秋日》开篇上线。
+  「专家来函」（名称待定）先做好但不放导航、首页和文章列表，有一两篇稿子后再上线。
+  12/1 简报；12/10 看护者文章（照顾好自己）；12/15 简报「节日聚会，怎样让失智的家人也自在参与」；12/20 健忘文章。
+  feelings-memory 两个语言版本里"下一篇文章"的预告已改为"之后会专门写一篇"。
