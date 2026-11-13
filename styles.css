@@ -630,6 +630,13 @@ textarea.input-plain {
   margin: 44px auto 0;
   padding: 0 var(--space-6);
 }
+/* 头图下方的小字说明（2026-11-13，如"插图由 AI 生成"） */
+.hero-caption {
+  margin: 10px 0 0;
+  text-align: right;
+  font: var(--fw-regular) 13px/1.5 var(--font-body);
+  color: var(--ink-500);
+}
 .article-body {
   max-width: 680px;
   margin: 0 auto;

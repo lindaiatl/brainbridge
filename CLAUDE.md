@@ -178,3 +178,10 @@ MindCadence 帮助人们通过可信的科学、有温度的写作和富有同�
   「专家来函」（名称待定）先做好但不放导航、首页和文章列表，有一两篇稿子后再上线。
   12/1 简报；12/10 看护者文章（照顾好自己）；12/15 简报「节日聚会，怎样让失智的家人也自在参与」；12/20 健忘文章。
   feelings-memory 两个语言版本里"下一篇文章"的预告已改为"之后会专门写一篇"。
+
+## 2026-11-13 新栏目「脑韵随笔 · 心灵小憩」（在 autumn-day 分支上，11/20 合并上线）
+- 栏目目录页 notes-articles.html / zh/notes-articles.html（英文 MindCadence Notes — A Moment's Rest），文章总页筛选新增 "MindCadence Notes / 脑韵随笔"（data-topic="MindCadence Notes"），首页精选文章加第 7 张卡片。
+- 首篇 autumn-day.html / zh/autumn-day.html（The Long Autumn Day / 漫漫的秋日，Lindai 随笔，来源桌面 AutumnDay 文件夹；英文署名 Lindai，中文不署名）。
+  配图 autumn-day.jpg（AI 生成，头图下注明 "Illustration created with AI / 插图由 AI 生成"，styles.css 新增 .hero-caption）；音乐 autumn-day.mp3（alex-morgan《Autumn Leaves Falling》，Pixabay，约 -20 LUFS）；朗读用浏览器。
+  中文稿小改三处（顿号、"传统门诺派"、"近在咫尺的现代生活"），英文标题加冒号。首页"最近更新"日期 2026-11-20。
+- **上线方法**：这些改动都提交在 git 分支 autumn-day，main 上没有。11/20 在 main 上运行 `git merge autumn-day`（若 15 号简报改过 index.html，"最近更新"一段可能冲突，按日期顺序合并即可），再由站长 push。
