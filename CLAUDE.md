@@ -195,3 +195,4 @@ MindCadence 帮助人们通过可信的科学、有温度的写作和富有同�
 - 成功提示：英文 "Almost there! Please check your inbox and click the confirmation button to complete your subscription. (If you don’t see it, check your spam folder.)";
   中文"就差一步！请查收确认邮件，点击邮件里的确认按钮完成订阅。（没收到的话，请看看垃圾邮件文件夹。）"
 - 联系表单(首页"Get in touch"/联系卡片)仍用 Formspree(https://formspree.io/f/xojggagy),不要改。
+- 2026-11-14：资讯简报第 1 卷第 2 期（心灵与人文，2026-11-15，「不只是音乐，更是他的音乐」/ "It’s not just music. It’s their music."）已用 publish_issue.py 放进网站（期刊页、PDF 竖版/横版、插图、音乐、往期卡片、首页最新一期和最近更新），站长 push 上线。目前只在网站发布，未通过 MailerLite 群发。
