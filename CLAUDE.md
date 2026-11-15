@@ -95,8 +95,7 @@ MindCadence 帮助人们通过可信的科学、有温度的写作和富有同�
 - 新建 **Newsletter / 资讯简报** 页:newsletter.html / zh/newsletter.html。每月两期。页面有：简介、订阅表单、"每期内容"、往期列表(#issues)。
   目前往期列表是"第一期即将推出"的占位卡片;出第一期时，新建 newsletter/issue-01.html(及 zh/newsletter/issue-01.html),
   在 .issue-list 里按 HTML 注释中的模板加一张 .issue-card(最新的放最前),并删掉 .issue-empty。
-- 订阅表单(首页和简报页)现在真正提交到 Formspree(https://formspree.io/f/xojggagy,与联系表单同一个),
-  主题为 "New newsletter subscriber" / "资讯简报订阅",订阅邮箱会发到网站邮箱。之前的订阅表单只显示"谢谢"、并没有保存邮箱。
+- 订阅表单(首页和简报页)最初提交到 Formspree;**2026-11-14 起改为 MailerLite**(见下方"2026-11-14 订阅改用 MailerLite")。
 
 ## 资讯简报（Newsletter）编辑方针 — 2026-10-22
 - 每月两期：1 日「研究与发现 Research & Discovery」（阿尔茨海默病机制、早期诊断、生物标志物、治疗、临床试验）；
@@ -123,7 +122,7 @@ MindCadence 帮助人们通过可信的科学、有温度的写作和富有同�
 
 ## 2026-10-23 更新
 - 网站联系邮箱改为 contact@mindcadence.org（全站 mailto 和显示文字）。Calendly 预约链接仍是 calendly.com/lindai-atl/30min。
-  Formspree 表单（联系 + 订阅，同一个表单 "A New Form"）收件邮箱已于 10/23 改为 contact@mindcadence.org（Workflow → Email）。免费版：每月 50 次提交、最多 2 个关联邮箱。
+  Formspree 表单（联系 + 订阅，同一个表单 "A New Form"）收件邮箱已于 10/23 改为 contact@mindcadence.org（Workflow → Email）。免费版：每月 50 次提交、最多 2 个关联邮箱。（2026-11-14 起订阅改用 MailerLite，Formspree 只剩联系表单。）
 - 中文用词：**所有"照护者"改为"看护者"**（全站已替换；以后新内容一律用"看护者"）。"照护"一词也已全部改为"看护"（10/23 站长要求），以后中文一律用"看护"。
 - 首页"用可信的科学认识疾病"卡片：中文"清晰、准确地讲解大脑与神经系统疾病——用通俗的语言，讲清复杂的科学。"，英文 "…— complex science, in plain language."
 - 资讯简报每月 1 日「研究与发现」扩展为：阿尔茨海默病 **及其他神经系统疾病** 的重要进展（简报页文字已改）。
@@ -185,3 +184,14 @@ MindCadence 帮助人们通过可信的科学、有温度的写作和富有同�
   首页栏目卡片用 notes-cover.png（Claude 用代码绘制，与其他栏目封面同色调）；文章配图 autumn-day.jpg（AI 生成，头图下注明 "Illustration created with AI / 插图由 AI 生成"，styles.css 新增 .hero-caption）；音乐 autumn-day.mp3（alex-morgan《Autumn Leaves Falling》，Pixabay，约 -20 LUFS）；朗读用浏览器。
   中文稿小改三处（顿号、"传统门诺派"、"近在咫尺的现代生活"），英文标题加冒号。首页"最近更新"日期 2026-11-20。
 - **上线方法**：这些改动都提交在 git 分支 autumn-day，main 上没有。11/20 在 main 上运行 `git merge autumn-day`（若 15 号简报改过 index.html，"最近更新"一段可能冲突，按日期顺序合并即可），再由站长 push。
+
+## 2026-11-14 订阅改用 MailerLite
+- 四个订阅表单(index.html、newsletter.html、zh/index.html、zh/newsletter.html,id="newsletter-form")改为提交到 MailerLite 嵌入式表单
+  "MindCadence Newsletter Signup" 的公开地址:https://assets.mailerlite.com/jsonp/2769984/forms/203977321339684501/subscribe 。
+  订阅者进入 "MindCadence Newsletter" 组;开启 Double opt-in(先收确认邮件，点确认后才入组，入组后自动发欢迎邮件)。
+- 字段：邮箱 name="fields[email]",隐藏字段 ml-submit=1、anticsrf=true。页面底部脚本用 fetch 提交，返回 JSON {"success": true} 才显示成功提示，否则显示 data-error。
+  该地址允许跨域读取返回结果(已在 www.mindcadence.org 实测)。页面里没有、也不要放 MailerLite API Key。
+- MailerLite 表单的 reCAPTCHA 已关闭(站长决定，靠 Double opt-in 防垃圾订阅)。以后若重新开启，必须同时在表单里加 reCAPTCHA,否则提交会失败。
+- 成功提示：英文 "Almost there! Please check your inbox and click the confirmation button to complete your subscription. (If you don’t see it, check your spam folder.)";
+  中文"就差一步！请查收确认邮件，点击邮件里的确认按钮完成订阅。（没收到的话，请看看垃圾邮件文件夹。）"
+- 联系表单(首页"Get in touch"/联系卡片)仍用 Formspree(https://formspree.io/f/xojggagy),不要改。
