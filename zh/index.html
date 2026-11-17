@@ -56,8 +56,8 @@
     <!-- WHATS-NEW -->
     <ul class="wn-list">
       <li><a href="autumn-day.html"><span class="wn-tag">脑韵随笔</span><span class="wn-title">漫漫的秋日</span><time class="wn-date" datetime="2026-11-20">2026 年 11 月 20 日</time></a></li>
+      <li><a href="newsletter/issue-02.html"><span class="wn-tag">资讯简报</span><span class="wn-title">不只是音乐，更是他的音乐</span><time class="wn-date" datetime="2026-11-15">2026 年 11 月 15 日</time></a></li>
       <li><a href="feelings-memory.html"><span class="wn-tag">看护者</span><span class="wn-title">忘了你说过的话，却记得你给的感觉</span><time class="wn-date" datetime="2026-11-10">2026 年 11 月 10 日</time></a></li>
-      <li><a href="newsletter/issue-01.html"><span class="wn-tag">资讯简报</span><span class="wn-title">让阿尔茨海默病走得慢一些</span><time class="wn-date" datetime="2026-11-01">2026 年 11 月 1 日</time></a></li>
     </ul>
     <!-- /WHATS-NEW -->
   </div>
@@ -181,20 +181,20 @@
         <a class="link-underline" href="newsletter.html">阅读资讯简报 →</a>
         <!-- LATEST-ISSUE -->
         <div class="latest-issue">
-          <span class="latest-label">最新一期 · 第 1 卷 · 第 1 期 · 创刊号 · 2026 年 11 月 1 日</span>
-          <a class="latest-title" href="newsletter/issue-01.html">让阿尔茨海默病走得慢一些</a>
-          <p>创刊号，从一项里程碑式的试验说起；也说说，为什么一首老歌，仍能找到回家的路。</p>
-          <div class="latest-links"><a href="newsletter/issue-01.html">阅读本期 →</a><a href="../newsletter/pdf/mindcadence-newsletter-01-zh.pdf" download>↓ PDF</a></div>
+          <span class="latest-label">最新一期 · 第 1 卷 · 第 2 期 · 2026 年 11 月 15 日</span>
+          <a class="latest-title" href="newsletter/issue-02.html">不只是音乐，更是他的音乐</a>
+          <p>一项关于痴呆患者与“最爱的歌”的脑成像研究；也说说，为什么值得趁早收集一个人一生的歌。</p>
+          <div class="latest-links"><a href="newsletter/issue-02.html">阅读本期 →</a><a href="../newsletter/pdf/mindcadence-newsletter-02-zh.pdf" download>↓ PDF</a></div>
         </div>
         <!-- /LATEST-ISSUE -->
 
-        <div id="newsletter-success" class="newsletter-success">谢谢你——订阅成功。欢迎来到脑韵。</div>
+        <div id="newsletter-success" class="newsletter-success">就差一步！请查收确认邮件，点击邮件里的确认按钮完成订阅。（没收到的话，请看看垃圾邮件文件夹。）</div>
 
-        <form id="newsletter-form" class="newsletter-form" action="https://formspree.io/f/xojggagy" method="POST" data-error="出了点问题，请稍后再试，或直接给我们写信。">
-          <input type="hidden" name="_subject" value="资讯简报订阅">
-          <input type="hidden" name="form" value="newsletter">
+        <form id="newsletter-form" class="newsletter-form" action="https://assets.mailerlite.com/jsonp/2769984/forms/203977321339684501/subscribe" method="POST" data-error="出了点问题，请稍后再试，或直接给我们写信。">
+          <input type="hidden" name="ml-submit" value="1">
+          <input type="hidden" name="anticsrf" value="true">
           <div class="newsletter-row">
-            <input id="newsletter-email" class="input" type="email" name="email" placeholder="你的邮箱地址" required>
+            <input id="newsletter-email" class="input" type="email" name="fields[email]" placeholder="你的邮箱地址" required>
             <button type="submit" class="btn btn-primary">订阅</button>
           </div>
           <span class="form-hint">你的邮箱地址只用于接收脑韵资讯简报，不会与第三方分享。你可以随时退订。</span>
@@ -303,7 +303,8 @@
 </script>
 
 <script>
-  // Newsletter sign-up: sends the address to Formspree (arrives in the MindCadence inbox).
+  // Newsletter sign-up: sends the address to MailerLite (group "MindCadence Newsletter", double opt-in).
+  // Uses the public form endpoint from the MailerLite embed code, so no API key is in the page.
   (function () {
     var form = document.getElementById('newsletter-form');
     if (!form) return;
@@ -321,6 +322,11 @@
       fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
         .then(function (r) {
           if (!r.ok) throw new Error('bad');
+          return r.json();
+        })
+        .then(function (result) {
+          // MailerLite answers {"success": true} once the confirmation email is on its way.
+          if (!result || result.success !== true) throw new Error('rejected');
           form.classList.add('is-hidden');
           success.classList.add('is-visible');
         })

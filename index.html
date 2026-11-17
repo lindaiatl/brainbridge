@@ -56,8 +56,8 @@
     <!-- WHATS-NEW -->
     <ul class="wn-list">
       <li><a href="autumn-day.html"><span class="wn-tag">MindCadence Notes</span><span class="wn-title">The Long Autumn Day</span><time class="wn-date" datetime="2026-11-20">Nov 20, 2026</time></a></li>
+      <li><a href="newsletter/issue-02.html"><span class="wn-tag">Newsletter</span><span class="wn-title">It’s not just music. It’s their music.</span><time class="wn-date" datetime="2026-11-15">Nov 15, 2026</time></a></li>
       <li><a href="feelings-memory.html"><span class="wn-tag">For caregivers</span><span class="wn-title">She May Forget the Visit, but Not the Feeling</span><time class="wn-date" datetime="2026-11-10">Nov 10, 2026</time></a></li>
-      <li><a href="newsletter/issue-01.html"><span class="wn-tag">Newsletter</span><span class="wn-title">Slowing Alzheimer’s, not stopping it</span><time class="wn-date" datetime="2026-11-01">Nov 1, 2026</time></a></li>
     </ul>
     <!-- /WHATS-NEW -->
   </div>
@@ -181,20 +181,20 @@
         <a class="link-underline" href="newsletter.html">Read the newsletter →</a>
         <!-- LATEST-ISSUE -->
         <div class="latest-issue">
-          <span class="latest-label">Latest issue · Vol. 1 · No. 1 · Inaugural Issue · November 1, 2026</span>
-          <a class="latest-title" href="newsletter/issue-01.html">Slowing Alzheimer’s, not stopping it</a>
-          <p>For our first issue: a landmark trial — and why a familiar song can still find its way home.</p>
-          <div class="latest-links"><a href="newsletter/issue-01.html">Read this issue →</a><a href="newsletter/pdf/mindcadence-newsletter-01-en.pdf" download>↓ PDF</a></div>
+          <span class="latest-label">Latest issue · Vol. 1 · No. 2 · November 15, 2026</span>
+          <a class="latest-title" href="newsletter/issue-02.html">It’s not just music. It’s their music.</a>
+          <p>A brain-imaging study of favorite songs in dementia — and why to gather the music of a life while you can.</p>
+          <div class="latest-links"><a href="newsletter/issue-02.html">Read this issue →</a><a href="newsletter/pdf/mindcadence-newsletter-02-en.pdf" download>↓ PDF</a></div>
         </div>
         <!-- /LATEST-ISSUE -->
 
-        <div id="newsletter-success" class="newsletter-success">Thank you — you're on the list. Welcome to MindCadence.</div>
+        <div id="newsletter-success" class="newsletter-success">Almost there! Please check your inbox and click the confirmation button to complete your subscription. (If you don&rsquo;t see it, check your spam folder.)</div>
 
-        <form id="newsletter-form" class="newsletter-form" action="https://formspree.io/f/xojggagy" method="POST" data-error="Something went wrong. Please try again, or email us directly.">
-          <input type="hidden" name="_subject" value="New newsletter subscriber">
-          <input type="hidden" name="form" value="newsletter">
+        <form id="newsletter-form" class="newsletter-form" action="https://assets.mailerlite.com/jsonp/2769984/forms/203977321339684501/subscribe" method="POST" data-error="Something went wrong. Please try again, or email us directly.">
+          <input type="hidden" name="ml-submit" value="1">
+          <input type="hidden" name="anticsrf" value="true">
           <div class="newsletter-row">
-            <input id="newsletter-email" class="input" type="email" name="email" placeholder="you@email.com" required>
+            <input id="newsletter-email" class="input" type="email" name="fields[email]" placeholder="you@email.com" required>
             <button type="submit" class="btn btn-primary">Subscribe</button>
           </div>
           <span class="form-hint">We'll never share your email. Unsubscribe anytime.</span>
@@ -303,7 +303,8 @@
 </script>
 
 <script>
-  // Newsletter sign-up: sends the address to Formspree (arrives in the MindCadence inbox).
+  // Newsletter sign-up: sends the address to MailerLite (group "MindCadence Newsletter", double opt-in).
+  // Uses the public form endpoint from the MailerLite embed code, so no API key is in the page.
   (function () {
     var form = document.getElementById('newsletter-form');
     if (!form) return;
@@ -321,6 +322,11 @@
       fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
         .then(function (r) {
           if (!r.ok) throw new Error('bad');
+          return r.json();
+        })
+        .then(function (result) {
+          // MailerLite answers {"success": true} once the confirmation email is on its way.
+          if (!result || result.success !== true) throw new Error('rejected');
           form.classList.add('is-hidden');
           success.classList.add('is-visible');
         })
