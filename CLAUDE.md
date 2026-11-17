@@ -192,7 +192,8 @@ MindCadence 帮助人们通过可信的科学、有温度的写作和富有同�
 - 字段：邮箱 name="fields[email]",隐藏字段 ml-submit=1、anticsrf=true。页面底部脚本用 fetch 提交，返回 JSON {"success": true} 才显示成功提示，否则显示 data-error。
   该地址允许跨域读取返回结果(已在 www.mindcadence.org 实测)。页面里没有、也不要放 MailerLite API Key。
 - MailerLite 表单的 reCAPTCHA 已关闭(站长决定，靠 Double opt-in 防垃圾订阅)。以后若重新开启，必须同时在表单里加 reCAPTCHA,否则提交会失败。
-- 成功提示：英文 "Almost there! Please check your inbox and click the confirmation button to complete your subscription. (If you don’t see it, check your spam folder.)";
-  中文"就差一步！请查收确认邮件，点击邮件里的确认按钮完成订阅。（没收到的话，请看看垃圾邮件文件夹。）"
+- 成功提示(2026-11-17 改为站长定稿，两段):英文 "Thank you for subscribing to the MindCadence Newsletter! We’ve just sent you a confirmation email. Please click the button inside to complete your subscription." / "If it doesn’t arrive within a few minutes, please check your Spam or Promotions folder, and add newsletter@mindcadence.org to your contacts so future issues reach your inbox.";
+  中文"谢谢订阅脑韵简报！我们刚给你发了一封确认邮件，请点击邮件里的按钮完成订阅。" / "如果几分钟内没有收到，请看看“垃圾邮件”或“推广”文件夹，并把 newsletter@mindcadence.org 加入联系人，这样以后的简报就不会被拦截了。"
+- 订阅框正下方小字(class="form-hint form-note"):英文 "Please confirm via the email we send you. It may land in your Spam folder.";中文"订阅后请查收确认邮件（可能在垃圾邮件文件夹中）。" 出错提示只替换原来那行隐私小字(JS 选择器 .form-hint:not(.form-note))。
 - 联系表单(首页"Get in touch"/联系卡片)仍用 Formspree(https://formspree.io/f/xojggagy),不要改。
 - 2026-11-14：资讯简报第 1 卷第 2 期（心灵与人文，2026-11-15，「不只是音乐，更是他的音乐」/ "It’s not just music. It’s their music."）已用 publish_issue.py 放进网站（期刊页、PDF 竖版/横版、插图、音乐、往期卡片、首页最新一期和最近更新），站长 push 上线。目前只在网站发布，未通过 MailerLite 群发。

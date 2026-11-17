@@ -180,7 +180,7 @@
         </div>
         <!-- /LATEST-ISSUE -->
 
-        <div id="newsletter-success" class="newsletter-success">Almost there! Please check your inbox and click the confirmation button to complete your subscription. (If you don&rsquo;t see it, check your spam folder.)</div>
+        <div id="newsletter-success" class="newsletter-success" role="status"><p>Thank you for subscribing to the MindCadence Newsletter! We&rsquo;ve just sent you a confirmation email. Please click the button inside to complete your subscription.</p><p>If it doesn&rsquo;t arrive within a few minutes, please check your Spam or Promotions folder, and add newsletter@mindcadence.org to your contacts so future issues reach your inbox.</p></div>
 
         <form id="newsletter-form" class="newsletter-form" action="https://assets.mailerlite.com/jsonp/2769984/forms/203977321339684501/subscribe" method="POST" data-error="Something went wrong. Please try again, or email us directly.">
           <input type="hidden" name="ml-submit" value="1">
@@ -189,6 +189,7 @@
             <input id="newsletter-email" class="input" type="email" name="fields[email]" placeholder="you@email.com" required>
             <button type="submit" class="btn btn-primary">Subscribe</button>
           </div>
+          <span class="form-hint form-note">Please confirm via the email we send you. It may land in your Spam folder.</span>
           <span class="form-hint">We'll never share your email. Unsubscribe anytime.</span>
         </form>
       </div>
@@ -302,7 +303,7 @@
     if (!form) return;
     var emailInput = document.getElementById('newsletter-email');
     var success = document.getElementById('newsletter-success');
-    var hint = form.querySelector('.form-hint');
+    var hint = form.querySelector('.form-hint:not(.form-note)');
     var hintText = hint ? hint.textContent : '';
     form.addEventListener('submit', function (event) {
       event.preventDefault();

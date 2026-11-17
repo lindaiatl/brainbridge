@@ -484,6 +484,9 @@ html[lang^="zh"] .about-copy p.about-mission {
   display: none;
 }
 .newsletter-success.is-visible { display: block; }
+.newsletter-success p { margin: 0; }
+.newsletter-success p + p { margin-top: 10px; font-size: 15px; font-weight: var(--fw-regular); color: var(--ink-600); }
+.newsletter-form .form-note { margin-top: -6px; }
 .newsletter-form {
   display: flex;
   flex-direction: column;
