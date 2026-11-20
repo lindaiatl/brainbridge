@@ -195,5 +195,6 @@ MindCadence 帮助人们通过可信的科学、有温度的写作和富有同�
 - 成功提示(2026-11-17 改为站长定稿，两段):英文 "Thank you for subscribing to the MindCadence Newsletter! We’ve just sent you a confirmation email. Please click the button inside to complete your subscription." / "If it doesn’t arrive within a few minutes, please check your Spam or Promotions folder, and add newsletter@mindcadence.org to your contacts so future issues reach your inbox.";
   中文"谢谢订阅脑韵简报！我们刚给你发了一封确认邮件，请点击邮件里的按钮完成订阅。" / "如果几分钟内没有收到，请看看“垃圾邮件”或“推广”文件夹，并把 newsletter@mindcadence.org 加入联系人，这样以后的简报就不会被拦截了。"
 - 订阅框正下方小字(class="form-hint form-note"):英文 "Please confirm via the email we send you. It may land in your Spam folder.";中文"订阅后请查收确认邮件（可能在垃圾邮件文件夹中）。" 出错提示只替换原来那行隐私小字(JS 选择器 .form-hint:not(.form-note))。
+- 2026-11-17 全流程实测通过(测试地址 lindai.atl+test1117@gmail.com,中文简报页):网页提示正常 → 确认邮件约 1 分钟内到 Gmail 收件箱(from/reply-to newsletter@mindcadence.org,mailed-by news.mindcadence.org,signed-by mindcadence.org)→ 点确认后出现 MailerLite 默认感谢页 → 欢迎邮件《Welcome to MindCadence | 欢迎订阅脑韵》几分钟内到收件箱。确认邮件和感谢页仍是 MailerLite 英文默认模板，可在表单 Double opt-in 设置里改成双语。
 - 联系表单(首页"Get in touch"/联系卡片)仍用 Formspree(https://formspree.io/f/xojggagy),不要改。
 - 2026-11-14：资讯简报第 1 卷第 2 期（心灵与人文，2026-11-15，「不只是音乐，更是他的音乐」/ "It’s not just music. It’s their music."）已用 publish_issue.py 放进网站（期刊页、PDF 竖版/横版、插图、音乐、往期卡片、首页最新一期和最近更新），站长 push 上线。目前只在网站发布，未通过 MailerLite 群发。
