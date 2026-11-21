@@ -203,4 +203,5 @@ MindCadence 帮助人们通过可信的科学、有温度的写作和富有同�
 ## 2026-11-20 分享卡片标签（Open Graph）
 - 站长反馈：文章链接转到微信/短信时只显示灰色链接图标。已给 autumn-day.html / zh/autumn-day.html 的 <head> 加 og:type、og:site_name、og:locale、og:title、og:description（同 meta description）、og:url、og:image（完整网址，用文章头图）及宽高、twitter:card=summary_large_image。
 - **以后每篇新文章（中英文）都要加这一组标签**，紧接在 <meta name="description"> 后面。11/25《昨夜，我在梦里迷了路》/ "Last Night, I Got Lost in a Dream" 做网页时带上。
+- 2026-11-20 晚：全站其余 56 个页面（中英文文章、目录页、首页、简报页、两期简报）也已补上同一组标签。分享配图统一放在 **og/** 目录（≤1200 宽的 .jpg，约 20–290 KB；原图多为 2 MB 的 png，太大不适合分享卡片；简报的 svg 插图已转成 jpg）。首页、文章总页、简报介绍页用 og/hero.jpg；脑韵随笔目录页用 og/notes-cover.jpg。resources.html 是跳转页，不加。新文章：把头图缩成 og/<名>.jpg 再写进 og:image。
 - 微信对普通网页的 og 标签支持不稳定；iMessage/短信能正常显示。转发过的链接有缓存，可加 ?v=2 重新生成预览。
