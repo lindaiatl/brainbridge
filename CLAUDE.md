@@ -199,3 +199,9 @@ MindCadence 帮助人们通过可信的科学、有温度的写作和富有同�
 - 2026-11-17 全流程实测通过(测试地址 lindai.atl+test1117@gmail.com,中文简报页):网页提示正常 → 确认邮件约 1 分钟内到 Gmail 收件箱(from/reply-to newsletter@mindcadence.org,mailed-by news.mindcadence.org,signed-by mindcadence.org)→ 点确认后出现 MailerLite 默认感谢页 → 欢迎邮件《Welcome to MindCadence | 欢迎订阅脑韵》几分钟内到收件箱。确认邮件和感谢页仍是 MailerLite 英文默认模板，可在表单 Double opt-in 设置里改成双语。
 - 联系表单(首页"Get in touch"/联系卡片)仍用 Formspree(https://formspree.io/f/xojggagy),不要改。
 - 2026-11-14：资讯简报第 1 卷第 2 期（心灵与人文，2026-11-15，「不只是音乐，更是他的音乐」/ "It’s not just music. It’s their music."）已用 publish_issue.py 放进网站（期刊页、PDF 竖版/横版、插图、音乐、往期卡片、首页最新一期和最近更新），站长 push 上线。目前只在网站发布，未通过 MailerLite 群发。
+
+## 2026-11-20 分享卡片标签（Open Graph）
+- 站长反馈：文章链接转到微信/短信时只显示灰色链接图标。已给 autumn-day.html / zh/autumn-day.html 的 <head> 加 og:type、og:site_name、og:locale、og:title、og:description（同 meta description）、og:url、og:image（完整网址，用文章头图）及宽高、twitter:card=summary_large_image。
+- **以后每篇新文章（中英文）都要加这一组标签**，紧接在 <meta name="description"> 后面。11/25《昨夜，我在梦里迷了路》/ "Last Night, I Got Lost in a Dream" 做网页时带上。
+- 2026-11-20 晚：全站其余 56 个页面（中英文文章、目录页、首页、简报页、两期简报）也已补上同一组标签。分享配图统一放在 **og/** 目录（≤1200 宽的 .jpg，约 20–290 KB；原图多为 2 MB 的 png，太大不适合分享卡片；简报的 svg 插图已转成 jpg）。首页、文章总页、简报介绍页用 og/hero.jpg；脑韵随笔目录页用 og/notes-cover.jpg。resources.html 是跳转页，不加。新文章：把头图缩成 og/<名>.jpg 再写进 og:image。
+- 微信对普通网页的 og 标签支持不稳定；iMessage/短信能正常显示。转发过的链接有缓存，可加 ?v=2 重新生成预览。
