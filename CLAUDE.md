@@ -205,3 +205,8 @@ MindCadence 帮助人们通过可信的科学、有温度的写作和富有同�
 - **以后每篇新文章（中英文）都要加这一组标签**，紧接在 <meta name="description"> 后面。11/25《昨夜，我在梦里迷了路》/ "Last Night, I Got Lost in a Dream" 做网页时带上。
 - 2026-11-20 晚：全站其余 56 个页面（中英文文章、目录页、首页、简报页、两期简报）也已补上同一组标签。分享配图统一放在 **og/** 目录（≤1200 宽的 .jpg，约 20–290 KB；原图多为 2 MB 的 png，太大不适合分享卡片；简报的 svg 插图已转成 jpg）。首页、文章总页、简报介绍页用 og/hero.jpg；脑韵随笔目录页用 og/notes-cover.jpg。resources.html 是跳转页，不加。新文章：把头图缩成 og/<名>.jpg 再写进 og:image。
 - 微信对普通网页的 og 标签支持不稳定；iMessage/短信能正常显示。转发过的链接有缓存，可加 ?v=2 重新生成预览。
+
+## 2026-11-24 脑韵随笔第二篇（11/25 发布）
+- dream-crossroads.html / zh/dream-crossroads.html（Last Night, I Got Lost in a Dream / 昨夜，我在梦里迷了路，副题“当大脑成为自己的编剧”；Lindai 随笔，来源桌面"脑韵文章/11-25-2026-梦三岔路口"；英文署名 Lindai，中文不署名；文中老同学用化名“小Y / Y”）。
+  配图 dream-crossroads.jpg（AI 生成，1600×900，头图下注明“插图由 AI 生成”）；分享配图 og/dream-crossroads.jpg；音乐 dream-crossroads.mp3（tunetank《Dreamy Ambient》，Pixabay 347935，调到约 -20 LUFS）；朗读用浏览器。
+  正文后半部分（醒后的议论）前加了 story-divider 分隔线。已加入 notes-articles 目录（02）、articles.html 卡片（中英文）、首页"最近更新"（2026-11-25）；与 autumn-day 互相出现在"相关文章"里（替换了原来的 hope 卡片）。
